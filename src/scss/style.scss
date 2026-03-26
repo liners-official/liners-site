@@ -335,6 +335,7 @@ body {
     a {
       color: $white;
       text-decoration: underline;
+
       &::before {
         position: absolute;
         content: "";
@@ -353,5 +354,55 @@ body {
       margin-top: 2rem;
     }
 
+  }
+
+  #loading {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: transform 1s ease;
+  }
+
+  .bg-left {
+    background: #111;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  .bg-right {
+    background: $Thema-color;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  #loading.active .bg-left {
+    transform: translateX(-100%);
+  }
+
+  #loading.active .bg-right {
+    transform: translateX(100%);
+  }
+
+  #loading.active .logo {
+    opacity: 0;
   }
 }
