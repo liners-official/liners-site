@@ -1,105 +1,357 @@
- *,
- *::before,
- *::after {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
- }
+$Thema-color: #C42C35;
+$white: #fff;
+$Navy: #2C3454;
+$gray: #74767F;
+$text-color: #29292B;
+$font-text: 'Zen Kaku Gothic New', sans-serif;
+$font-title: 'Roboto Slab', sans-serif;
 
- html,
- body {
-   height: 100%;
- }
+html {
+  /* 375px のとき 1rem = 16px */
+  font-size: 16px;
+  /* 375px 未満は縮む（最小14px）、375px 以上は 16px で固定 */
+  font-size: clamp(14px, calc(100vw * 16 / 375), 16px);
+}
 
- body {
-   background: #fafaf8;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-family: 'DM Sans', sans-serif;
-   min-height: 100vh;
- }
+body {
+  font-family: $font-text;
+  font-size: 1rem;
+  background-color: #F4F3F2;
 
- .inner {
-   text-align: center;
-   padding: 3rem 2rem;
- }
+  .inner {
+    padding: 0 1.25rem;
+    max-width: 31.25rem;
+    margin: 0 auto;
+  }
 
- .icon {
-   width: 40px;
-   height: 40px;
-   margin: 0 auto 2.5rem;
-   animation: rotate 12s linear infinite;
- }
+  video {
+    width: 100%;
+  }
 
- @keyframes rotate {
-   from {
-     transform: rotate(0deg);
-   }
+  section {
+    margin-top: 5rem;
+  }
 
-   to {
-     transform: rotate(360deg);
-   }
- }
+  h2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $Navy;
+    letter-spacing: 4%;
+    border-bottom: .2rem dotted $Thema-color;
+    padding-bottom: 0.625rem;
+    margin-bottom: .625rem;
 
- .label {
-   font-family: 'DM Mono', monospace;
-   font-size: 10px;
-   letter-spacing: 0.18em;
-   color: #aaa;
-   text-transform: uppercase;
-   margin-bottom: 1.25rem;
- }
+    .head-en {
+      font-weight: 800;
+      font-family: $font-title;
+      font-size: 1.625rem;
+    }
 
- h1 {
-   font-size: 28px;
-   font-weight: 300;
-   color: #1a1a1a;
-   margin: 0 0 1rem;
-   letter-spacing: -0.02em;
-   line-height: 1.2;
- }
+    .head-sub {
+      font-size: 1.2rem;
+      margin-top: .5rem;
 
- .desc {
-   font-size: 14px;
-   color: #999;
-   margin: 0 0 2.5rem;
-   line-height: 1.8;
- }
+      &-color {
+        color: $Thema-color;
+      }
+    }
+  }
 
- .line {
-   width: 40px;
-   height: 1px;
-   background: #e0e0e0;
-   margin: 0 auto 2rem;
-   position: relative;
-   overflow: hidden;
- }
+  ul {
+    list-style: none;
+  }
 
- .line::after {
-   content: '';
-   position: absolute;
-   left: -40px;
-   top: 0;
-   width: 40px;
-   height: 1px;
-   background: #1a1a1a;
-   animation: slide 2.5s ease-in-out infinite;
- }
+  .kv {
+    position: relative;
+    margin-top: 0.625rem;
 
- @keyframes slide {
-   0% {
-     left: -40px;
-   }
+    &__video {
+      border-radius: 1.875rem;
+      filter: brightness(0.5);
+    }
 
-   100% {
-     left: 40px;
-   }
- }
+    &__read {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-size: 2rem;
+      line-height: 2;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
 
- .time {
-   font-family: 'DM Mono', monospace;
-   font-size: 11px;
-   color: #bbb;
-   letter-spacing: 0.05em;
- }
+      &--box {
+        span {
+          background: linear-gradient(transparent 60%, $Thema-color 30%);
+          display: inline-block;
+        }
+
+      }
+    }
+
+    &__scroll {
+      padding-bottom: 60px;
+      position: relative;
+      text-align: center;
+      margin-top: 1rem;
+
+      /* 矢印のアニメーション部分 */
+      &::before {
+        animation: scroll 2s infinite;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        content: "";
+        height: 1.25rem;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        width: 1.25rem;
+      }
+
+      /* 矢印のアニメーション */
+      @keyframes scroll {
+        0% {
+          opacity: 0;
+          transform: rotate(-45deg) translate(0, 0);
+        }
+
+        40% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 0;
+          transform: rotate(-45deg) translate(-1.25rem, 1.25rem);
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      span {
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        color: $Navy;
+      }
+    }
+  }
+
+  .about {
+    margin-top: 2rem;
+
+    p {
+      font-family: $font-text;
+      font-size: 1rem;
+      line-height: 2;
+      margin-top: 1.2rem;
+      color: $text-color;
+    }
+
+    &__list {
+      margin-top: 1.2rem;
+      list-style: none;
+      color: $text-color;
+
+      li {
+        margin-top: 0.625rem;
+        padding: 0 0 0 .625rem;
+        position: relative;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.625rem;
+          width: 0.25rem;
+          height: 0.25rem;
+          background-color: $text-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .interview {
+    font-family: $font-text;
+
+    &__list {
+      margin-top: 2rem;
+
+      &--item {
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 1.4rem;
+
+        .profile {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          img {
+            max-width: 100%;
+            width: 3.75rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1;
+          }
+
+          p {
+            color: $gray;
+            letter-spacing: 4%;
+            margin-top: .5rem;
+          }
+        }
+
+        .text {
+          margin-top: 1rem;
+
+          li {
+            margin-top: 1rem;
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            p {
+              margin-top: .5rem;
+              line-height: 1.5;
+
+              &:first-child {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .training {
+    &__list {
+      margin-top: 2rem;
+
+      li {
+        display: flex;
+        margin-top: 1rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .label {
+          background-color: $Navy;
+          color: $white;
+          padding: 0 .5rem .2rem;
+          line-height: 1.5;
+          border-radius: .25rem;
+        }
+
+        .content {
+          margin-left: .625rem;
+        }
+      }
+    }
+  }
+
+  .cta {
+    text-align: center;
+
+    p {
+      color: $Thema-color;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    a {
+      margin-top: 1rem;
+      background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
+      box-shadow: 3px 4px 0px 0px #7B3F40;
+      color: $white;
+      font-size: 1rem;
+      display: block;
+      width: 100%;
+      padding: 1rem 0;
+      border-radius: 1.5rem;
+      font-weight: 700;
+      position: relative;
+      line-height: 1;
+
+      &::after {
+        position: absolute;
+        right: 1.5rem;
+        content: "";
+        display: inline-block;
+        width: 0.7rem;
+        height: 1.1rem;
+        background-image: url('/assets/image/arrow.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &::before {
+        position: absolute;
+        left: 2.5rem;
+        content: "";
+        display: inline-block;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-image: url('/assets/image/Instagram_Glyph_White.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  footer {
+    margin: 5rem auto 0;
+    padding: 5rem 0;
+    text-align: center;
+    background-color: $Navy;
+    font-size: .875rem;
+    color: $white;
+    max-width: 31.25rem;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      &::before {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        width: 1.1rem;
+        height: 1.1rem;
+        background-image: url('/assets/image/Instagram_Glyph_White.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: 7.5rem;
+      }
+    }
+
+    p {
+      margin-top: 2rem;
+    }
+
+  }
+}

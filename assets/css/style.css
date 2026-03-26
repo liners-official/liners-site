@@ -1,1 +1,298 @@
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{background:#fafaf8;display:flex;align-items:center;justify-content:center;font-family:"DM Sans",sans-serif;min-height:100vh}.inner{text-align:center;padding:3rem 2rem}.icon{width:40px;height:40px;margin:0 auto 2.5rem;animation:rotate 12s linear infinite}@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.label{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.18em;color:#aaa;text-transform:uppercase;margin-bottom:1.25rem}h1{font-size:28px;font-weight:300;color:#1a1a1a;margin:0 0 1rem;letter-spacing:-0.02em;line-height:1.2}.desc{font-size:14px;color:#999;margin:0 0 2.5rem;line-height:1.8}.line{width:40px;height:1px;background:#e0e0e0;margin:0 auto 2rem;position:relative;overflow:hidden}.line::after{content:"";position:absolute;left:-40px;top:0;width:40px;height:1px;background:#1a1a1a;animation:slide 2.5s ease-in-out infinite}@keyframes slide{0%{left:-40px}100%{left:40px}}.time{font-family:"DM Mono",monospace;font-size:11px;color:#bbb;letter-spacing:.05em}
+@charset "UTF-8";
+html {
+  /* 375px のとき 1rem = 16px */
+  font-size: 16px;
+  /* 375px 未満は縮む（最小14px）、375px 以上は 16px で固定 */
+  font-size: clamp(14px, 4.2666666667vw, 16px);
+}
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 1rem;
+  background-color: #F4F3F2;
+}
+body .inner {
+  padding: 0 1.25rem;
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+body video {
+  width: 100%;
+}
+body section {
+  margin-top: 5rem;
+}
+body h2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2C3454;
+  letter-spacing: 4%;
+  border-bottom: 0.2rem dotted #C42C35;
+  padding-bottom: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+body h2 .head-en {
+  font-weight: 800;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.625rem;
+}
+body h2 .head-sub {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+body h2 .head-sub-color {
+  color: #C42C35;
+}
+body ul {
+  list-style: none;
+}
+body .kv {
+  position: relative;
+  margin-top: 0.625rem;
+}
+body .kv__video {
+  border-radius: 1.875rem;
+  filter: brightness(0.5);
+}
+body .kv__read {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+body .kv__read--box span {
+  background: linear-gradient(transparent 60%, #C42C35 30%);
+  display: inline-block;
+}
+body .kv__scroll {
+  padding-bottom: 60px;
+  position: relative;
+  text-align: center;
+  margin-top: 1rem;
+  /* 矢印のアニメーション部分 */
+}
+body .kv__scroll::before {
+  animation: scroll 2s infinite;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  content: "";
+  height: 1.25rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  width: 1.25rem;
+}
+body .kv__scroll {
+  /* 矢印のアニメーション */
+}
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(-1.25rem, 1.25rem);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .kv__scroll span {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #2C3454;
+}
+body .about {
+  margin-top: 2rem;
+}
+body .about p {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  margin-top: 1.2rem;
+  color: #29292B;
+}
+body .about__list {
+  margin-top: 1.2rem;
+  list-style: none;
+  color: #29292B;
+}
+body .about__list li {
+  margin-top: 0.625rem;
+  padding: 0 0 0 0.625rem;
+  position: relative;
+}
+body .about__list li:first-child {
+  margin-top: 0;
+}
+body .about__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.625rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #29292B;
+  border-radius: 50%;
+}
+body .interview {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+body .interview__list {
+  margin-top: 2rem;
+}
+body .interview__list--item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1.4rem;
+}
+body .interview__list--item .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body .interview__list--item .profile img {
+  max-width: 100%;
+  width: 3.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+body .interview__list--item .profile h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+body .interview__list--item .profile p {
+  color: #74767F;
+  letter-spacing: 4%;
+  margin-top: 0.5rem;
+}
+body .interview__list--item .text {
+  margin-top: 1rem;
+}
+body .interview__list--item .text li {
+  margin-top: 1rem;
+}
+body .interview__list--item .text li:first-child {
+  margin-top: 0;
+}
+body .interview__list--item .text li p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+body .interview__list--item .text li p:first-child {
+  margin-top: 0;
+}
+body .training__list {
+  margin-top: 2rem;
+}
+body .training__list li {
+  display: flex;
+  margin-top: 1rem;
+}
+body .training__list li:first-child {
+  margin-top: 0;
+}
+body .training__list li .label {
+  background-color: #2C3454;
+  color: #fff;
+  padding: 0 0.5rem 0.2rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+body .training__list li .content {
+  margin-left: 0.625rem;
+}
+body .cta {
+  text-align: center;
+}
+body .cta p {
+  color: #C42C35;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body .cta a {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
+  box-shadow: 3px 4px 0px 0px #7B3F40;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  line-height: 1;
+}
+body .cta a::after {
+  position: absolute;
+  right: 1.5rem;
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1.1rem;
+  background-image: url("/assets/image/arrow.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body .cta a::before {
+  position: absolute;
+  left: 2.5rem;
+  content: "";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body footer {
+  margin: 5rem auto 0;
+  padding: 5rem 0;
+  text-align: center;
+  background-color: #2C3454;
+  font-size: 0.875rem;
+  color: #fff;
+  max-width: 31.25rem;
+}
+body footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+body footer a::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 7.5rem;
+}
+body footer p {
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

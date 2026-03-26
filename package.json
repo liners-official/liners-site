@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "sass --watch src/scss/style.scss:assets/css/style.css --style=expanded --source-map",
+    "watch": "sass --watch src/scss/style.scss:assets/css/style.css --style=expanded --source-map",
     "build": "sass src/scss/style.scss:assets/css/style.css --style=compressed --no-source-map"
   },
   "devDependencies": {
