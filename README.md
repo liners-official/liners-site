@@ -21,7 +21,7 @@ npm install
 ## 開発（Sass 監視）
 
 ```bash
-npm run dev
+npm run watch
 ```
 
 - `src/scss/style.scss` を監視し、`assets/css/style.css` に出力します。
