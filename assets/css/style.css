@@ -294,5 +294,46 @@ body footer a::before {
 body footer p {
   margin-top: 2rem;
 }
+body #loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+body .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition: transform 1s ease;
+}
+body .bg-left {
+  background: #111;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+body .bg-right {
+  background: #C42C35;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+body .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+body .logo img {
+  width: 120px;
+}
+body #loading.active .bg-left {
+  transform: translateX(-100%);
+}
+body #loading.active .bg-right {
+  transform: translateX(100%);
+}
+body #loading.active .logo {
+  opacity: 0;
+}
 
 /*# sourceMappingURL=style.css.map */
