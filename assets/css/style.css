@@ -300,6 +300,21 @@ body .cta a::before {
   background-size: contain;
   background-repeat: no-repeat;
 }
+body .information__list li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+body .information__list li:first-child {
+  margin-top: 2rem;
+}
+body .information__list li .content {
+  margin-top: 0.5rem;
+}
+body .Instagram h2 {
+  margin-bottom: 2rem;
+}
 body footer {
   margin: 5rem auto 0;
   padding: 5rem 0;
