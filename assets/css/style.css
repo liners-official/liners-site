@@ -239,6 +239,7 @@ body .training__list {
 body .training__list li {
   display: flex;
   margin-top: 1rem;
+  align-items: center;
 }
 body .training__list li:first-child {
   margin-top: 0;
