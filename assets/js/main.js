@@ -1,20 +1,46 @@
+const tryAutoPlayInlineVideo = (video) => {
+  if (!video) return;
+
+  // Autoplay on mobile usually requires muted + playsinline.
+  video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  const attempt = () => video.play();
+
+  attempt().catch(() => {
+    const resume = () => {
+      attempt().finally(() => {
+        document.removeEventListener("touchstart", resume);
+        document.removeEventListener("click", resume);
+      });
+    };
+    document.addEventListener("touchstart", resume, {
+      once: true,
+      passive: true,
+    });
+    document.addEventListener("click", resume, { once: true });
+  });
+};
+
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loading = document.getElementById("loading");
+  // If a loading overlay exists, fade it out first.
+  const loading = document.getElementById("loading");
+  const video = document.querySelector(".kv__video");
+
+  if (!loading) {
+    tryAutoPlayInlineVideo(video);
+    return;
+  }
+
+  window.setTimeout(() => {
     loading.classList.add("active");
 
-    setTimeout(() => {
+    window.setTimeout(() => {
       loading.style.display = "none";
-
-      const video = document.querySelector(".kv__video");
-      if (video) {
-        video.play().catch(() => {
-          video.muted = true;
-          video.play();
-        });
-      }
-
+      tryAutoPlayInlineVideo(video);
     }, 1000);
-
   }, 1000);
 });
