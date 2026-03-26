@@ -10,6 +10,36 @@ body {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 1rem;
   background-color: #F4F3F2;
+  position: relative;
+}
+body .cta-mini {
+  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 1.5rem;
+  padding: 2.2rem 1rem 1rem;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: 3px 3px 0px 0px #7B3F40;
+}
+body .cta-mini::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 0.5rem;
+  transform: translateX(-50%);
+}
+body .cta-mini p {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 body .inner {
   padding: 0 1.25rem;
@@ -68,6 +98,9 @@ body .kv__read {
   width: 100%;
   text-align: center;
   font-weight: bold;
+}
+body .kv__read--box {
+  display: block;
 }
 body .kv__read--box span {
   background: linear-gradient(transparent 60%, #C42C35 30%);
