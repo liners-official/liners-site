@@ -361,19 +361,29 @@ body {
     }
   }
 
-  .information {
+  .information,
+  .RESULT {
     &__list {
       li {
         background-color: #fff;
         padding: 1rem;
         border-radius: 1rem;
         margin-top: 1rem;
+
         &:first-child {
           margin-top: 2rem;
         }
 
         .content {
           margin-top: .5rem;
+          line-height: 1.5;
+        }
+
+        a {
+          text-decoration: underline;
+          color: blue;
+          line-height: 1.5;
+          display: block;
         }
       }
     }
