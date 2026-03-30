@@ -44,3 +44,43 @@ window.addEventListener("load", () => {
     }, 1000);
   }, 1000);
 });
+
+document.querySelectorAll('.question').forEach((q) => {
+  q.addEventListener('click', () => {
+    const answer = q.nextElementSibling;
+
+    if (q.classList.contains('is-open')) {
+      // 閉じる
+      answer.style.height = answer.scrollHeight + 'px';
+
+      requestAnimationFrame(() => {
+        answer.style.height = '0px';
+      });
+
+      q.classList.remove('is-open');
+    } else {
+      // 開く前にリセット
+      answer.style.height = 'auto';
+      const height = answer.scrollHeight;
+
+      answer.style.height = '0px';
+
+      requestAnimationFrame(() => {
+        answer.style.height = height + 'px';
+      });
+
+      q.classList.add('is-open');
+
+      // 開いた後はautoに戻す
+      answer.addEventListener(
+        'transitionend',
+        () => {
+          if (q.classList.contains('is-open')) {
+            answer.style.height = 'auto';
+          }
+        },
+        { once: true }
+      );
+    }
+  });
+});
