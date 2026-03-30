@@ -49,6 +49,9 @@ body footer a::before {
 body footer p {
   margin-top: 2rem;
 }
+body h3 {
+  font-weight: 400;
+}
 body #loading {
   position: fixed;
   inset: 0;
@@ -370,7 +373,7 @@ body.top .cta a::before {
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-image: url("/assets/image/Instagram/Instagram_Glyph_White.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
