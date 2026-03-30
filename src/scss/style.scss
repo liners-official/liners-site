@@ -16,6 +16,7 @@ html {
 body {
   font-family: $font-text;
   font-size: 1rem;
+  font-style: normal;
   background-color: #F4F3F2;
   position: relative;
 
@@ -73,8 +74,11 @@ body {
     align-items: center;
     color: $Navy;
     letter-spacing: 4%;
-    border-bottom: .2rem dotted $Thema-color;
-    padding-bottom: 0.625rem;
+    background-image: radial-gradient(circle, $Thema-color 0.125rem, transparent 0.125rem);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: .9rem 0.25rem;
+    padding-bottom: 1.5rem;
     margin-bottom: .625rem;
 
     .head-en {
@@ -390,8 +394,48 @@ body {
   }
 
   .Instagram {
+    background-color: $white;
+    position: relative;
+    z-index: 0;
+    max-width: 31.25rem;
+    margin: 10rem auto;
+    padding-bottom: 2rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 100%;
+      max-width: 31.25rem;
+      height: 7.375rem;
+      background-image: url('/assets/image/Instagram-top.png');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 0;
+      top: -6rem;
+      z-index: -1;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 100%;
+      max-width: 31.25rem;
+      height: 7.375rem;
+      background-image: url('/assets/image/Instagram-bottom.png');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 0;
+      bottom: -6rem;
+      z-index: -1;
+    }
+
     h2 {
       margin-bottom: 2rem;
+      background-image: none;
     }
   }
 

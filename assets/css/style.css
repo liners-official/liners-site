@@ -9,6 +9,7 @@ html {
 body {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 1rem;
+  font-style: normal;
   background-color: #F4F3F2;
   position: relative;
 }
@@ -59,8 +60,11 @@ body h2 {
   align-items: center;
   color: #2C3454;
   letter-spacing: 4%;
-  border-bottom: 0.2rem dotted #C42C35;
-  padding-bottom: 0.625rem;
+  background-image: radial-gradient(circle, #C42C35 0.125rem, transparent 0.125rem);
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  background-size: 0.9rem 0.25rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 0.625rem;
 }
 body h2 .head-en {
@@ -324,8 +328,47 @@ body .RESULT__list li a {
   line-height: 1.5;
   display: block;
 }
+body .Instagram {
+  background-color: #fff;
+  position: relative;
+  z-index: 0;
+  max-width: 31.25rem;
+  margin: 10rem auto;
+  padding-bottom: 2rem;
+}
+body .Instagram::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  max-width: 31.25rem;
+  height: 7.375rem;
+  background-image: url("/assets/image/Instagram-top.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  top: -6rem;
+  z-index: -1;
+}
+body .Instagram:after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  max-width: 31.25rem;
+  height: 7.375rem;
+  background-image: url("/assets/image/Instagram-bottom.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  bottom: -6rem;
+  z-index: -1;
+}
 body .Instagram h2 {
   margin-bottom: 2rem;
+  background-image: none;
 }
 body footer {
   margin: 5rem auto 0;
