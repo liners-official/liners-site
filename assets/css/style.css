@@ -13,35 +13,6 @@ body {
   background-color: #F4F3F2;
   position: relative;
 }
-body .cta-mini {
-  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
-  position: fixed;
-  z-index: 1;
-  right: 0;
-  bottom: 3rem;
-  padding: 2.2rem 1rem 1rem;
-  border-radius: 1rem 0 0 1rem;
-  box-shadow: 3px 3px 0px 0px #7B3F40;
-}
-body .cta-mini::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  width: 1.3rem;
-  height: 1.3rem;
-  background-image: url("/assets/image/Instagram_Glyph_White.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 50%;
-  top: 0.5rem;
-  transform: translateX(-50%);
-}
-body .cta-mini p {
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
 body .inner {
   padding: 0 1rem;
   max-width: 31.25rem;
@@ -49,387 +20,6 @@ body .inner {
 }
 body video {
   width: 100%;
-}
-body section {
-  margin-top: 5rem;
-}
-body h2 {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #2C3454;
-  letter-spacing: 4%;
-  background-image: radial-gradient(circle, #C42C35 0.125rem, transparent 0.125rem);
-  background-position: left bottom;
-  background-repeat: repeat-x;
-  background-size: 0.9rem 0.25rem;
-  padding-bottom: 1.5rem;
-  margin-bottom: 0.625rem;
-}
-body h2 .head-en {
-  font-weight: 800;
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 1.625rem;
-}
-body h2 .head-sub {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-body h2 .head-sub-color {
-  color: #C42C35;
-}
-body ul {
-  list-style: none;
-}
-body .kv {
-  position: relative;
-  margin-top: 0.625rem;
-}
-body .kv__video {
-  border-radius: 1.875rem;
-  filter: brightness(0.5);
-}
-body .kv__read {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2rem;
-  line-height: 2;
-  margin: 0;
-  max-width: 16rem;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-}
-body .kv__read--box {
-  display: block;
-}
-body .kv__read--box span {
-  background: linear-gradient(transparent 60%, #C42C35 30%);
-  display: inline-block;
-}
-body .kv__scroll {
-  padding-bottom: 60px;
-  position: relative;
-  text-align: center;
-  margin-top: 1rem;
-  /* 矢印のアニメーション部分 */
-}
-body .kv__scroll::before {
-  animation: scroll 2s infinite;
-  border-bottom: 1px solid #000;
-  border-left: 1px solid #000;
-  content: "";
-  height: 1.25rem;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  top: 1rem;
-  width: 1.25rem;
-}
-body .kv__scroll {
-  /* 矢印のアニメーション */
-}
-@keyframes scroll {
-  0% {
-    opacity: 0;
-    transform: rotate(-45deg) translate(0, 0);
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-    transform: rotate(-45deg) translate(-1.25rem, 1.25rem);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-body .kv__scroll span {
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  color: #2C3454;
-}
-body .about {
-  margin-top: 2rem;
-}
-body .about p {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-size: 1rem;
-  line-height: 2;
-  margin-top: 1.2rem;
-  color: #29292B;
-}
-body .about__list {
-  margin-top: 1.2rem;
-  list-style: none;
-  color: #29292B;
-}
-body .about__list li {
-  margin-top: 0.625rem;
-  padding: 0 0 0 0.625rem;
-  position: relative;
-}
-body .about__list li:first-child {
-  margin-top: 0;
-}
-body .about__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.625rem;
-  width: 0.25rem;
-  height: 0.25rem;
-  background-color: #29292B;
-  border-radius: 50%;
-}
-body .interview {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-}
-body .interview__list {
-  margin-top: 2rem;
-}
-body .interview__list--item {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 1.4rem;
-}
-body .interview__list--item .profile {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-body .interview__list--item .profile img {
-  max-width: 100%;
-  width: 3.75rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-body .interview__list--item .profile h3 {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-}
-body .interview__list--item .profile p {
-  color: #74767F;
-  letter-spacing: 4%;
-  margin-top: 0.5rem;
-}
-body .interview__list--item .text {
-  margin-top: 1rem;
-}
-body .interview__list--item .text li {
-  margin-top: 1rem;
-}
-body .interview__list--item .text li:first-child {
-  margin-top: 0;
-}
-body .interview__list--item .text li p {
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-body .interview__list--item .text li p:first-child {
-  margin-top: 0;
-}
-body .training__list {
-  margin-top: 2rem;
-}
-body .training__list li {
-  display: flex;
-  margin-top: 1rem;
-  align-items: center;
-}
-body .training__list li:first-child {
-  margin-top: 0;
-}
-body .training__list li .label {
-  background-color: #2C3454;
-  color: #fff;
-  padding: 0 0.5rem 0.2rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-}
-body .training__list li .content {
-  margin-left: 0.625rem;
-}
-body .cta {
-  text-align: center;
-}
-body .cta p {
-  color: #C42C35;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-body .cta a {
-  margin-top: 1rem;
-  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
-  box-shadow: 3px 4px 0px 0px #7B3F40;
-  color: #fff;
-  font-size: 1rem;
-  display: block;
-  width: 100%;
-  padding: 1rem 0;
-  border-radius: 1.5rem;
-  font-weight: 700;
-  position: relative;
-  line-height: 1;
-}
-body .cta a::after {
-  position: absolute;
-  right: 1.5rem;
-  content: "";
-  display: inline-block;
-  width: 0.7rem;
-  height: 1.1rem;
-  background-image: url("/assets/image/arrow.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-body .cta a::before {
-  position: absolute;
-  left: 2.5rem;
-  content: "";
-  display: inline-block;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-image: url("/assets/image/Instagram_Glyph_White.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-body .information__list li,
-body .RESULT__list li {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-top: 1rem;
-}
-body .information__list li:first-child,
-body .RESULT__list li:first-child {
-  margin-top: 2rem;
-}
-body .information__list li .content,
-body .RESULT__list li .content {
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-body .information__list li a,
-body .RESULT__list li a {
-  text-decoration: underline;
-  color: blue;
-  line-height: 1.5;
-  display: block;
-}
-body .Instagram {
-  background-color: #fff;
-  position: relative;
-  z-index: 0;
-  max-width: 31.25rem;
-  margin: 10rem auto;
-  padding-bottom: 2rem;
-}
-body .Instagram::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  width: 100%;
-  max-width: 31.25rem;
-  height: 7.375rem;
-  background-image: url("/assets/image/Instagram-top.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 0;
-  top: -6rem;
-  z-index: -1;
-}
-body .Instagram:after {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  width: 100%;
-  max-width: 31.25rem;
-  height: 7.375rem;
-  background-image: url("/assets/image/Instagram-bottom.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 0;
-  bottom: -6rem;
-  z-index: -1;
-}
-body .Instagram h2 {
-  margin-bottom: 2rem;
-  background-image: none;
-}
-body .faq__list {
-  margin-top: 2rem;
-}
-body .faq__list li {
-  margin-top: 1rem;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 0.6rem;
-  line-height: 1.5;
-  position: relative;
-}
-body .faq__list li .question {
-  position: relative;
-  font-size: 0.88rem;
-  padding: 0 1rem 0 1rem;
-  cursor: pointer;
-}
-body .faq__list li .question::before {
-  position: absolute;
-  content: "Q";
-  color: #C42C35;
-  left: 0;
-}
-body .faq__list li .question::after {
-  position: absolute;
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  right: 0;
-  top: 0.12rem;
-  background: url("/assets/image/faq/close.png") center/contain no-repeat;
-  transition: transform 0.3s ease;
-}
-body .faq__list li .question.is-open::after {
-  background: url("/assets/image/faq/open.png") center/contain no-repeat;
-  transform: rotate(180deg);
-}
-body .faq__list li .answer {
-  position: relative;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  padding: 0 0 0 1rem;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
-}
-body .faq__list li .answer::before {
-  position: absolute;
-  content: "A";
-  color: #C42C35;
-  left: 0;
-}
-body .faq__list li .question.is-open + .answer {
-  opacity: 1;
-}
-body .faq__list li .question.is-open {
-  border-bottom: solid 1px #F4F3F2;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 body footer {
   margin: 5rem auto 0;
@@ -450,7 +40,7 @@ body footer a::before {
   display: inline-block;
   width: 1.1rem;
   height: 1.1rem;
-  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-image: url("/assets/image/Instagram/Instagram_Glyph_White.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -499,6 +89,417 @@ body #loading.active .bg-right {
 }
 body #loading.active .logo {
   opacity: 0;
+}
+
+body.top .cta-mini {
+  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 3rem;
+  padding: 2.2rem 1rem 1rem;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: 3px 3px 0px 0px #7B3F40;
+}
+body.top .cta-mini::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-image: url("/assets/image/Instagram/Instagram_Glyph_White.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 0.5rem;
+  transform: translateX(-50%);
+}
+body.top .cta-mini p {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+body.top section {
+  margin-top: 5rem;
+}
+body.top h2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2C3454;
+  letter-spacing: 4%;
+  background-image: radial-gradient(circle, #C42C35 0.125rem, transparent 0.125rem);
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  background-size: 0.9rem 0.25rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0.625rem;
+}
+body.top h2 .head-en {
+  font-weight: 800;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.625rem;
+}
+body.top h2 .head-sub {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+body.top h2 .head-sub-color {
+  color: #C42C35;
+}
+body.top ul {
+  list-style: none;
+}
+body.top .kv {
+  position: relative;
+  margin-top: 0.625rem;
+}
+body.top .kv__video {
+  border-radius: 1.875rem;
+  filter: brightness(0.5);
+}
+body.top .kv__read {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2;
+  margin: 0;
+  max-width: 16rem;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+body.top .kv__read--box {
+  display: block;
+}
+body.top .kv__read--box span {
+  background: linear-gradient(transparent 60%, #C42C35 30%);
+  display: inline-block;
+}
+body.top .kv__scroll {
+  padding-bottom: 60px;
+  position: relative;
+  text-align: center;
+  margin-top: 1rem;
+  /* 矢印のアニメーション部分 */
+}
+body.top .kv__scroll::before {
+  animation: scroll 2s infinite;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  content: "";
+  height: 1.25rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  width: 1.25rem;
+}
+body.top .kv__scroll {
+  /* 矢印のアニメーション */
+}
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(-1.25rem, 1.25rem);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body.top .kv__scroll span {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #2C3454;
+}
+body.top .about {
+  margin-top: 2rem;
+}
+body.top .about p {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  margin-top: 1.2rem;
+  color: #29292B;
+}
+body.top .about__list {
+  margin-top: 1.2rem;
+  list-style: none;
+  color: #29292B;
+}
+body.top .about__list li {
+  margin-top: 0.625rem;
+  padding: 0 0 0 0.625rem;
+  position: relative;
+}
+body.top .about__list li:first-child {
+  margin-top: 0;
+}
+body.top .about__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.625rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #29292B;
+  border-radius: 50%;
+}
+body.top .interview {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+body.top .interview__list {
+  margin-top: 2rem;
+}
+body.top .interview__list--item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1.4rem;
+}
+body.top .interview__list--item .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body.top .interview__list--item .profile img {
+  max-width: 100%;
+  width: 3.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+body.top .interview__list--item .profile h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+body.top .interview__list--item .profile p {
+  color: #74767F;
+  letter-spacing: 4%;
+  margin-top: 0.5rem;
+}
+body.top .interview__list--item .text {
+  margin-top: 1rem;
+}
+body.top .interview__list--item .text li {
+  margin-top: 1rem;
+}
+body.top .interview__list--item .text li:first-child {
+  margin-top: 0;
+}
+body.top .interview__list--item .text li p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+body.top .interview__list--item .text li p:first-child {
+  margin-top: 0;
+}
+body.top .training__list {
+  margin-top: 2rem;
+}
+body.top .training__list li {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+body.top .training__list li:first-child {
+  margin-top: 0;
+}
+body.top .training__list li .label {
+  background-color: #2C3454;
+  color: #fff;
+  padding: 0 0.5rem 0.2rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+body.top .training__list li .content {
+  margin-left: 0.625rem;
+}
+body.top .cta {
+  text-align: center;
+}
+body.top .cta p {
+  color: #C42C35;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body.top .cta a {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #EC3C47 0%, #EF3875 100%);
+  box-shadow: 3px 4px 0px 0px #7B3F40;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  line-height: 1;
+}
+body.top .cta a::after {
+  position: absolute;
+  right: 1.5rem;
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1.1rem;
+  background-image: url("/assets/image/arrow.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body.top .cta a::before {
+  position: absolute;
+  left: 2.5rem;
+  content: "";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("/assets/image/Instagram_Glyph_White.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body.top .information__list li,
+body.top .RESULT__list li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+body.top .information__list li:first-child,
+body.top .RESULT__list li:first-child {
+  margin-top: 2rem;
+}
+body.top .information__list li .content,
+body.top .RESULT__list li .content {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+body.top .information__list li a,
+body.top .RESULT__list li a {
+  text-decoration: underline;
+  color: blue;
+  line-height: 1.5;
+  display: block;
+}
+body.top .Instagram {
+  background-color: #fff;
+  position: relative;
+  z-index: 0;
+  max-width: 31.25rem;
+  margin: 10rem auto;
+  padding-bottom: 2rem;
+}
+body.top .Instagram::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  max-width: 31.25rem;
+  height: 7.375rem;
+  background-image: url("/assets/image/instagram/Instagram-top.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  top: -6rem;
+  z-index: -1;
+}
+body.top .Instagram:after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  max-width: 31.25rem;
+  height: 7.375rem;
+  background-image: url("/assets/image/instagram/Instagram-bottom.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  bottom: -6rem;
+  z-index: -1;
+}
+body.top .Instagram h2 {
+  margin-bottom: 2rem;
+  background-image: none;
+}
+body.top .faq__list {
+  margin-top: 2rem;
+}
+body.top .faq__list li {
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  line-height: 1.5;
+  position: relative;
+}
+body.top .faq__list li .question {
+  position: relative;
+  font-size: 0.88rem;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+}
+body.top .faq__list li .question::before {
+  position: absolute;
+  content: "Q";
+  color: #C42C35;
+  left: 0;
+}
+body.top .faq__list li .question::after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  right: 0;
+  top: 0.12rem;
+  background: url("/assets/image/faq/close.png") center/contain no-repeat;
+  transition: transform 0.3s ease;
+}
+body.top .faq__list li .question.is-open::after {
+  background: url("/assets/image/faq/open.png") center/contain no-repeat;
+  transform: rotate(180deg);
+}
+body.top .faq__list li .answer {
+  position: relative;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 0 0 0 1rem;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+body.top .faq__list li .answer::before {
+  position: absolute;
+  content: "A";
+  color: #C42C35;
+  left: 0;
+}
+body.top .faq__list li .question.is-open + .answer {
+  opacity: 1;
+}
+body.top .faq__list li .question.is-open {
+  border-bottom: solid 1px #F4F3F2;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
