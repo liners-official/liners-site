@@ -60,10 +60,22 @@ body {
     p {
       margin-top: 2rem;
     }
+
+
   }
 
   h3 {
     font-weight: 400;
+  }
+
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto 0;
+    display: block;
+    border-radius: 1.875rem;
   }
 
   #loading {
@@ -313,6 +325,36 @@ body.top {
         }
       }
     }
+
+
+    .loop-wrap {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .loop-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: loop-left 20s linear infinite;
+    }
+
+    .loop-track img {
+      width: 15rem;
+      height: 10rem;
+      flex-shrink: 0;
+    }
+
+    @keyframes loop-left {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 10px));
+      }
+    }
   }
 
   .interview {
@@ -451,6 +493,14 @@ body.top {
         background-size: contain;
         background-repeat: no-repeat;
       }
+    }
+  }
+
+  .RESULT {
+    .content {
+      display: flex;
+      gap: .5rem;
+      flex-direction: column;
     }
   }
 
@@ -604,4 +654,3 @@ body.top {
     }
   }
 }
-
