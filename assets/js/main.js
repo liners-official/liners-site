@@ -45,42 +45,69 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
-document.querySelectorAll('.question').forEach((q) => {
-  q.addEventListener('click', () => {
+document.querySelectorAll(".question").forEach((q) => {
+  q.addEventListener("click", () => {
     const answer = q.nextElementSibling;
 
-    if (q.classList.contains('is-open')) {
+    if (q.classList.contains("is-open")) {
       // 閉じる
-      answer.style.height = answer.scrollHeight + 'px';
+      answer.style.height = answer.scrollHeight + "px";
 
       requestAnimationFrame(() => {
-        answer.style.height = '0px';
+        answer.style.height = "0px";
       });
 
-      q.classList.remove('is-open');
+      q.classList.remove("is-open");
     } else {
       // 開く前にリセット
-      answer.style.height = 'auto';
+      answer.style.height = "auto";
       const height = answer.scrollHeight;
 
-      answer.style.height = '0px';
+      answer.style.height = "0px";
 
       requestAnimationFrame(() => {
-        answer.style.height = height + 'px';
+        answer.style.height = height + "px";
       });
 
-      q.classList.add('is-open');
+      q.classList.add("is-open");
 
       // 開いた後はautoに戻す
       answer.addEventListener(
-        'transitionend',
+        "transitionend",
         () => {
-          if (q.classList.contains('is-open')) {
-            answer.style.height = 'auto';
+          if (q.classList.contains("is-open")) {
+            answer.style.height = "auto";
           }
         },
-        { once: true }
+        { once: true },
       );
     }
   });
 });
+
+const tama = document.querySelector(".tama");
+const tamaImage = document.querySelector(".tama img");
+
+if (tamaImage) {
+  tamaImage.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+if (tama) {
+  const aboutSection = document.querySelector(".about");
+
+  if (!aboutSection) {
+    tama.classList.add("is-visible");
+  } else {
+    const updateTamaVisibility = () => {
+      const aboutRect = aboutSection.getBoundingClientRect();
+      const shouldShow = aboutRect.top <= window.innerHeight;
+      tama.classList.toggle("is-visible", shouldShow);
+    };
+
+    updateTamaVisibility();
+    window.addEventListener("scroll", updateTamaVisibility, { passive: true });
+    window.addEventListener("resize", updateTamaVisibility);
+  }
+}
