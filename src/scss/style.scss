@@ -32,7 +32,7 @@ body {
   }
 
   footer {
-    margin: 5rem auto 0;
+    margin: 10rem auto 0;
     padding: 5rem 0;
     text-align: center;
     background-color: $Navy;
@@ -190,7 +190,7 @@ body.top {
   }
 
   section {
-    margin-top: 5rem;
+    margin-top: 7rem;
   }
 
   h2 {
@@ -362,7 +362,7 @@ body.top {
       display: flex;
       gap: 1rem;
       width: max-content;
-      animation: loop-left 20s linear infinite;
+      animation: loop-left 50s linear infinite;
     }
 
     .loop-track img {
@@ -424,7 +424,7 @@ body.top {
           margin-top: 1rem;
 
           li {
-            margin-top: 1rem;
+            margin-top: 1.25rem;
 
             &:first-child {
               margin-top: 0;
@@ -564,7 +564,7 @@ body.top {
     position: relative;
     z-index: 0;
     max-width: 31.25rem;
-    margin: 10rem auto;
+    margin: 12rem auto;
     padding-bottom: 2rem;
 
     &::before {

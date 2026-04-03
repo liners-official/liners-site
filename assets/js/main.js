@@ -95,7 +95,7 @@ if (tamaImage) {
 }
 
 if (tama) {
-  const aboutSection = document.querySelector(".about");
+  const aboutSection = document.querySelector(".interview");
 
   if (!aboutSection) {
     tama.classList.add("is-visible");
