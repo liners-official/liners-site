@@ -25,8 +25,8 @@ const tryAutoPlayInlineVideo = (video) => {
   });
 };
 
-window.addEventListener("load", () => {
-  // If a loading overlay exists, fade it out first.
+window.addEventListener("DOMContentLoaded", () => {
+  // If a loading overlay exists, start it when the KV video is ready.
   const loading = document.getElementById("loading");
   const video = document.querySelector(".kv__video");
 
@@ -35,14 +35,36 @@ window.addEventListener("load", () => {
     return;
   }
 
-  window.setTimeout(() => {
+  let started = false;
+  const startOpening = () => {
+    if (started) return;
+    started = true;
+
     loading.classList.add("active");
 
     window.setTimeout(() => {
       loading.style.display = "none";
       tryAutoPlayInlineVideo(video);
     }, 1000);
-  }, 1000);
+  };
+
+  const startOpeningAfterVideoReady = () => {
+    window.setTimeout(startOpening, 2000);
+  };
+
+  if (!video) {
+    startOpening();
+    return;
+  }
+
+  if (video.readyState >= 2) {
+    startOpeningAfterVideoReady();
+    return;
+  }
+
+  video.addEventListener("canplay", startOpeningAfterVideoReady, { once: true });
+  video.addEventListener("error", startOpening, { once: true });
+  window.setTimeout(startOpening, 5000);
 });
 
 document.querySelectorAll(".question").forEach((q) => {
@@ -85,9 +107,13 @@ document.querySelectorAll(".question").forEach((q) => {
   });
 });
 
-document.addEventListener('contextmenu', function(event) {
-  event.preventDefault();
-}, false);
+document.addEventListener(
+  "contextmenu",
+  function (event) {
+    event.preventDefault();
+  },
+  false,
+);
 
 const tama = document.querySelector(".tama");
 const tamaImage = document.querySelector(".tama img");
