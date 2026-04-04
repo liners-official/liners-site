@@ -350,25 +350,25 @@ body.top {
         }
       }
     }
+  }
 
-
-    .loop-wrap {
-      overflow: hidden;
-      width: 100%;
-      margin-top: 1rem;
-    }
+  .loop-wrap {
+    overflow: hidden;
+    width: 100%;
+    max-width: 31.25rem;
+    margin: 1rem auto 0;
 
     .loop-track {
       display: flex;
       gap: 1rem;
       width: max-content;
       animation: loop-left 50s linear infinite;
-    }
 
-    .loop-track img {
-      width: 15rem;
-      height: 10rem;
-      flex-shrink: 0;
+      img {
+        width: 15rem;
+        height: 10rem;
+        flex-shrink: 0;
+      }
     }
 
     @keyframes loop-left {
