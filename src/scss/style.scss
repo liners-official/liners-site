@@ -399,6 +399,9 @@ body.top {
 
     &__list {
       margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
 
       &--item {
         background-color: $white;
@@ -444,11 +447,14 @@ body.top {
 
             p {
               margin-top: .5rem;
-              line-height: 1.5;
+              line-height: 1.7;
 
               &:first-child {
                 margin-top: 0;
               }
+            }
+            .comment {
+              line-height: 2;
             }
           }
         }
