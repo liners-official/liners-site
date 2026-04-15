@@ -39,6 +39,18 @@ body {
     font-size: .875rem;
     color: $white;
     max-width: 31.25rem;
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 14rem;
+      height: 9rem;
+      top: -8.4rem;
+      left: 0;
+      background-image: url('/assets/image/item/item-8.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     a {
       color: $white;
@@ -336,12 +348,25 @@ body.top {
     .item-left {
       position: absolute;
       width: 5rem;
-      height: 6rem;
-      top: -5.5rem;
-      left: 2rem;
+      height: 8rem;
+      top: -6.5rem;
+      left: 0;
       background-image: url('/assets/image/item/item-4.webp');
       background-repeat: no-repeat;
       background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 6rem;
+      height: 7rem;
+      top: -6rem;
+      right: -0.75rem;
+      background-image: url('/assets/image/item/item-3.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-down 3s infinite ease-in-out;
     }
 
     p {
@@ -417,24 +442,26 @@ body.top {
 
     .item-left {
       position: absolute;
-      width: 5rem;
+      width: 6rem;
       height: 5rem;
-      top: -0.5rem;
-      left: -.75rem;
+      top: -1.5rem;
+      left: -0.75rem;
       background-image: url('/assets/image/item/item-2.webp');
       background-repeat: no-repeat;
       background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
     }
 
     .item-right {
       position: absolute;
-      width: 5rem;
-      height: 5rem;
-      top: -1rem;
+      width: 6rem;
+      height: 7rem;
+      top: -5rem;
       right: -.75rem;
       background-image: url('/assets/image/item/item-6.webp');
       background-repeat: no-repeat;
       background-size: contain;
+      animation: shake-down 3s infinite ease-in-out;
     }
 
     &__list {
@@ -504,6 +531,32 @@ body.top {
   }
 
   .training {
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 5rem;
+      height: 8rem;
+      top: -4.5rem;
+      left: 1.5rem;
+      background-image: url('/assets/image/item/item-5.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 7rem;
+      height: 8rem;
+      top: -6rem;
+      right: -0.75rem;
+      background-image: url('/assets/image/item/item-7.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-down 3s infinite ease-in-out;
+    }
+
     &__list {
       margin-top: 2rem;
 
@@ -817,6 +870,30 @@ body.top {
           padding-bottom: .5rem;
         }
       }
+    }
+  }
+
+  @keyframes shake-up {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(15px);
+    }
+  }
+
+  @keyframes shake-down {
+
+    0%,
+    100% {
+      transform: translateY(15px);
+    }
+
+    50% {
+      transform: translateY(0);
     }
   }
 }
