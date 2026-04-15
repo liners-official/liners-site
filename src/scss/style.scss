@@ -43,18 +43,22 @@ body {
     a {
       color: $white;
       text-decoration: underline;
+      max-width: 31.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .25rem;
 
-      &::before {
-        position: absolute;
-        content: "";
-        display: inline-block;
-        width: 1.1rem;
-        height: 1.1rem;
-        background-image: url('/assets/image/Instagram/Instagram_Glyph_White.webp');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        left: 7.5rem;
+      img {
+        border-radius: 0;
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        margin: 0;
+      }
+
+      span {
+        display: block;
       }
     }
 
@@ -453,6 +457,7 @@ body.top {
                 margin-top: 0;
               }
             }
+
             .comment {
               line-height: 2;
             }
