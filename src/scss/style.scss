@@ -45,9 +45,9 @@ body {
       position: absolute;
       width: 14rem;
       height: 9rem;
-      top: -8.4rem;
+      top: -7.9rem;
       left: 0;
-      background-image: url('/assets/image/item/item-8.webp');
+      background-image: url('/assets/image/item/item-10.webp');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -442,9 +442,9 @@ body.top {
 
     .item-left {
       position: absolute;
-      width: 6rem;
-      height: 5rem;
-      top: -1.5rem;
+      width: 7rem;
+      height: 6rem;
+      top: -3.5rem;
       left: -0.75rem;
       background-image: url('/assets/image/item/item-2.webp');
       background-repeat: no-repeat;
@@ -455,7 +455,7 @@ body.top {
     .item-right {
       position: absolute;
       width: 6rem;
-      height: 7rem;
+      height: 8rem;
       top: -5rem;
       right: -.75rem;
       background-image: url('/assets/image/item/item-6.webp');
@@ -586,6 +586,40 @@ body.top {
 
   .cta {
     text-align: center;
+    position: relative;
+
+    .ai,
+    .hai {
+      &::before {
+        position: absolute;
+        content: "";
+        display: inline-block;
+      }
+    }
+
+    .ai {
+      &::before {
+        width: 3rem;
+        height: 5rem;
+        top: -2rem;
+        left: 1rem;
+        background-image: url('/assets/image/item/item-19.webp');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .hai {
+      &::before {
+        width: 3rem;
+        height: 5rem;
+        top: -2rem;
+        left: .5rem;
+        background-image: url('/assets/image/item/item-17.webp');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
 
     p {
       color: $Thema-color;
@@ -644,6 +678,32 @@ body.top {
   }
 
   .result {
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 7rem;
+      height: 8rem;
+      top: -4.5rem;
+      left: 1rem;
+      background-image: url('/assets/image/item/item-12.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 4rem;
+      height: 8rem;
+      top: -4rem;
+      right: 1rem;
+      background-image: url('/assets/image/item/item-21.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-down 3s infinite ease-in-out;
+    }
+
     &__list {
       margin-top: 2rem;
       list-style: none;
@@ -751,6 +811,34 @@ body.top {
     }
   }
 
+  .information {
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 7rem;
+      height: 8rem;
+      top: -4.5rem;
+      left: -0.5rem;
+      background-image: url('/assets/image/item/item-14.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 8rem;
+      height: 8rem;
+      top: -5rem;
+      right: -0.75rem;
+      background-image: url('/assets/image/item/item-15.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-down 3s infinite ease-in-out;
+    }
+  }
+
   .Instagram {
     background-color: $white;
     position: relative;
@@ -798,6 +886,31 @@ body.top {
   }
 
   .faq {
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 5rem;
+      height: 9rem;
+      top: -5.5rem;
+      left: 1.5rem;
+      background-image: url('/assets/image/item/item-20.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake-up 3s infinite ease-in-out;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 7rem;
+      height: 5rem;
+      top: 0.5rem;
+      right: 0rem;
+      background-image: url('/assets/image/item/item-1.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
     &__list {
       margin-top: 2rem;
 
