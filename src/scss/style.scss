@@ -331,6 +331,18 @@ body.top {
 
   .about {
     margin-top: 2rem;
+    position: relative;
+
+    .item-left {
+      position: absolute;
+      width: 5rem;
+      height: 6rem;
+      top: -5.5rem;
+      left: 2rem;
+      background-image: url('/assets/image/item/item-4.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     p {
       font-family: $font-text;
@@ -400,6 +412,30 @@ body.top {
 
   .interview {
     font-family: $font-text;
+    position: relative;
+    z-index: 0;
+
+    .item-left {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      top: -0.5rem;
+      left: -.75rem;
+      background-image: url('/assets/image/item/item-2.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .item-right {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      top: -1rem;
+      right: -.75rem;
+      background-image: url('/assets/image/item/item-6.webp');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     &__list {
       margin-top: 2rem;
