@@ -3,8 +3,9 @@
 静的サイト（GitHub Pages 公開）用のリポジトリです。
 
 - Sass のエントリーポイント: `src/scss/style.scss`
-- ビルド後の CSS 出力先: `assets/css/style.css`
-- HTML 側は `assets/css/style.css` を読み込みます（`index.html`）。
+- Sass のエントリーポイント: `src/scss/style.scss`, `src/scss/information.scss`, `src/scss/blog.scss`
+- ビルド後の CSS 出力先: `assets/css/style.css`, `assets/css/information.css`, `assets/css/blog.css`
+- HTML 側は必要な CSS を読み込みます（例: `index.html` は `assets/css/style.css`）。
 - JavaScript: `assets/js/main.js`（`index.html` から読み込み）
 - 独自ドメインを使う場合は `CNAME` を利用します。
 
@@ -25,6 +26,7 @@ npm run watch
 ```
 
 - `src/scss/style.scss` を監視し、`assets/css/style.css` に出力します。
+- あわせて `src/scss/information.scss` → `assets/css/information.css`、`src/scss/blog.scss` → `assets/css/blog.css` も監視・出力します。
 
 ## ビルド（本番用）
 
@@ -33,6 +35,7 @@ npm run build
 ```
 
 - 圧縮した CSS を `assets/css/style.css` に出力します。
+- あわせて `assets/css/information.css` / `assets/css/blog.css` も圧縮して出力します。
 
 ## GitHub Pages への公開について
 
@@ -55,10 +58,14 @@ JavaScript（`assets/js/main.js`）はビルド不要で、そのまま配信さ
 ├── index.html
 ├── assets/
 │   ├── css/
-│   │   └── style.css
+│   │   ├── style.css
+│   │   ├── information.css
+│   │   └── blog.css
 │   └── js/
 │       └── main.js
 └── src/
     └── scss/
-        └── style.scss
+    ├── style.scss
+    ├── information.scss
+    └── blog.scss
 ```

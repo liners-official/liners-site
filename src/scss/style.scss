@@ -41,6 +41,12 @@ body {
     max-width: 31.25rem;
     position: relative;
 
+    .footer__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .item-left {
       position: absolute;
       width: 14rem;

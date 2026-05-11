@@ -1,0 +1,70 @@
+$Thema-color: #C42C35;
+$white: #fff;
+$Navy: #2C3454;
+$gray: #74767F;
+$text-color: #29292B;
+$font-text: 'Zen Kaku Gothic New', sans-serif;
+$font-title: 'Roboto Slab', sans-serif;
+
+body.information {
+  .kv {
+    height: 16rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/image/result/result_6.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.05);
+      filter: brightness(.5);
+    }
+
+    h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      background-color: #808080a6;
+      text-align: center;
+      line-height: 1.5;
+      padding: .5rem;
+      max-width: 31.25rem;
+      color: $white;
+      font-size: 1rem;
+    }
+  }
+  .breadcrumbtrail {
+    margin-top: .5rem;
+    nav {
+      ol {
+        display: flex;
+        align-items: center;
+
+        li {
+          font-size: .875rem;
+          color: $text-color;
+          line-height: 1.5;
+
+          &:not(:last-child)::after {
+            content: '>';
+            margin: 0 .5rem;
+          }
+
+          a {
+            color: $text-color;
+          }
+
+          &::marker {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
