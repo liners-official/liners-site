@@ -598,12 +598,80 @@ body.top .result .item-right {
   background-size: contain;
   animation: shake-down 3s infinite ease-in-out;
 }
+body.top .result__list--container {
+  position: relative;
+}
+body.top .result__list--container .slick-prev.slick-arrow {
+  position: absolute;
+  right: 3rem;
+  bottom: -3rem;
+  font-size: 0;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("/assets/image/arrow_open_prev.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+body.top .result__list--container .slick-prev.slick-arrow.slick-disabled {
+  background-image: url("/assets/image/arrow_close_prev.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+body.top .result__list--container .slick-next.slick-arrow {
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+  font-size: 0;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("/assets/image/arrow_open_next.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+body.top .result__list--container .slick-next.slick-arrow.slick-disabled {
+  background-image: url("/assets/image/arrow_close_next.png");
+  background-repeat: no-repeat;
+}
+body.top .result__list--container .slick-dots {
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  display: flex;
+  gap: 1rem;
+}
+body.top .result__list--container .slick-dots li button {
+  font-size: 0;
+  border: none;
+  width: 3rem;
+  height: 0.3rem;
+  background-color: #74767F;
+}
+body.top .result__list--container .slick-dots .slick-active button {
+  background-color: #C42C35;
+}
+body.top .result__list--container.slick-initialized {
+  margin-top: 2rem;
+}
+body.top .result__list--container.slick-initialized .result__list {
+  margin-top: 0;
+}
 body.top .result__list {
   margin-top: 2rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+body.top .result__list.slick-slide {
+  display: block;
+}
+body.top .result__list.slick-slide li + li {
+  margin-top: 1.25rem;
 }
 body.top .result__list li {
   display: flex;
@@ -755,6 +823,7 @@ body.top .Instagram h2 {
 }
 body.top .faq {
   position: relative;
+  margin-top: 10rem;
 }
 body.top .faq .item-left {
   position: absolute;

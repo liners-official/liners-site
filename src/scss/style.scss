@@ -710,12 +710,90 @@ body.top {
       animation: shake-down 3s infinite ease-in-out;
     }
 
+    &__list--container {
+      position: relative;
+      .slick-prev.slick-arrow {
+        position: absolute;
+        right: 3rem;
+        bottom: -3rem;
+        font-size: 0;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        background-image: url('/assets/image/arrow_open_prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .slick-prev.slick-arrow.slick-disabled {
+        background-image: url('/assets/image/arrow_close_prev.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        
+      }
+      .slick-next.slick-arrow {
+        position: absolute;
+        right: 0;
+        bottom: -3rem;
+        font-size: 0;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        background-image: url('/assets/image/arrow_open_next.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .slick-next.slick-arrow.slick-disabled {
+        background-image: url('/assets/image/arrow_close_next.png');
+        background-repeat: no-repeat;
+      }
+      .slick-dots {
+        position: absolute;
+        left:0;
+        bottom: -2rem;
+        display: flex;
+        gap: 1rem;
+
+        li {
+          button {
+            font-size: 0;
+            border: none;
+            width: 3rem;
+            height: .3rem;
+            background-color: $gray;
+          }
+        }
+        .slick-active {
+          button {
+            background-color: $Thema-color;
+          }
+        }
+      }
+      &.slick-initialized {
+        margin-top: 2rem;
+
+        .result__list {
+          margin-top: 0;
+        }
+      }
+    }
+
     &__list {
       margin-top: 2rem;
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+
+      &.slick-slide {
+        display: block;
+
+        li+li {
+          margin-top: 1.25rem;
+        }
+      }
 
       li {
         display: flex;
@@ -893,6 +971,7 @@ body.top {
 
   .faq {
     position: relative;
+    margin-top: 10rem;
 
     .item-left {
       position: absolute;

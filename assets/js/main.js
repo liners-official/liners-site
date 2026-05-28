@@ -29,6 +29,27 @@ window.addEventListener("DOMContentLoaded", () => {
   let scrollLocked = false;
   let scrollLockY = 0;
 
+  const initResultListContainerSlider = () => {
+    const $ = window.jQuery;
+    if (!$ || !$.fn || typeof $.fn.slick !== "function") return;
+
+    const $container = $(".result__list--container");
+    if ($container.length === 0) return;
+    if ($container.hasClass("slick-initialized")) return;
+
+    const slideCount = $container.children(".result__list").length;
+    if (slideCount <= 1) return;
+
+    $container.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      adaptiveHeight: false,
+      dots: true,
+      arrows: true,
+    });
+  };
+
   const preventTouchMove = (event) => {
     if (!scrollLocked) return;
     event.preventDefault();
@@ -109,6 +130,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!loading) {
     tryAutoPlayInlineVideo(video);
     initScrollFadeIn();
+    initResultListContainerSlider();
   } else {
     // Disable scrolling while the opening overlay is shown.
     lockScroll();
@@ -127,6 +149,7 @@ window.addEventListener("DOMContentLoaded", () => {
         loading.style.display = "none";
         unlockScroll();
         tryAutoPlayInlineVideo(video);
+        initResultListContainerSlider();
       }, 1000);
     };
 

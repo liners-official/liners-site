@@ -42,7 +42,10 @@
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="assets/js/slick.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </head>
 
@@ -435,7 +438,8 @@
             style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
             <a href="https://www.instagram.com/p/DYbqd9gRCT3/?utm_source=ig_embed&amp;utm_campaign=loading"
               style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
-              target="_blank">ライナーズ(@liners_oga)がシェアした投稿</a></p>
+              target="_blank">ライナーズ(@liners_oga)がシェアした投稿</a>
+          </p>
         </div>
       </blockquote>
       <script async src="//www.instagram.com/embed.js"></script>
@@ -457,136 +461,142 @@
         <span class="head-en">RESULT</span>
         <span class="head-sub">試合結果</span>
       </h2>
-      <ol class="result__list">
-        <li class="js-fadein">
-          <p class="label">3位</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_7.webp" alt="第31回 全日本レディース大会神奈川県予選" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date">
-                <time datetime="2026-05-10">2026.05.10</time>~<time datetime="2026-05-17">2026.05.17</time>
-              </span>
-              <h3>第31回 全日本レディース大会<br>神奈川県予選</h3>
+      <div class="result__list--container js-fadein">
+        <ol class="result__list">
+          <li>
+            <p class="label">3位</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_7.webp" alt="第31回 全日本レディース大会神奈川県予選" width="400" height="300">
             </div>
-            <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/963" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">準優勝</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_6.webp" alt="第18回 レディース秋季大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date">
-                <time datetime="2026-04-19">2026.04.19</time>
-              </span>
-              <h3>横浜市民レディース<br>ソフトボール大会</h3>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date">
+                  <time datetime="2026-05-10">2026.05.10</time>~<time datetime="2026-05-17">2026.05.17</time>
+                </span>
+                <h3>第31回 全日本レディース大会<br>神奈川県予選</h3>
+              </div>
+              <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/963" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県</span></a>
             </div>
-            <a href="https://www3.yspc.or.jp/ckfiles/files/%E5%8A%A0%E7%9B%9F%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93%E6%83%85%E5%A0%B1/%E3%82%BD%E3%83%95%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB2026/2026%E5%B9%B4%E3%83%BB%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E6%9C%80%E7%B5%82%E7%B5%90%E6%9E%9C%EF%BC%8804_19%EF%BC%89.pdf"
-              target="_blank" rel="noopener noreferrer"><img src="assets/image/result/map.png"
-                alt="mapicon"><span>台町公園</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">3位</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_5.webp" alt="第18回 レディース秋季大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date">
-                <time datetime="2026-03-29">2026.03.29</time>～<time datetime="2026-04-12">2026.04.12</time>
-              </span>
-              <h3>横浜市 家庭婦人<br>ソフトボール春季大会</h3>
+          </li>
+          <li>
+            <p class="label">準優勝</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_6.webp" alt="第18回 レディース秋季大会の様子" width="400" height="300">
             </div>
-            <a href="https://www3.yspc.or.jp/ckfiles/files/%E5%8A%A0%E7%9B%9F%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93%E6%83%85%E5%A0%B1/%E3%82%BD%E3%83%95%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB2026/2026%E5%B9%B4%E3%83%BB%E6%98%A5%E5%AD%A3%E3%83%9E%E3%83%9E%E3%81%95%E3%82%93%E6%9C%80%E7%B5%82%E7%B5%90%E6%9E%9C%EF%BC%8804_12).pdf"
-              target="_blank" rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県
-                横浜市</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">Dブロック 2位</p>
-          <div class="result__list--image">
-            <img src="assets/image/liners_top.jpg" alt="第18回 レディース秋季大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date">
-                <time datetime="2025-12-07">2025.12.07</time>
-              </span>
-              <h3>第18回 レディース秋季大会</h3>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date">
+                  <time datetime="2026-04-19">2026.04.19</time>
+                </span>
+                <h3>横浜市民レディース<br>ソフトボール大会</h3>
+              </div>
+              <a href="https://www3.yspc.or.jp/ckfiles/files/%E5%8A%A0%E7%9B%9F%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93%E6%83%85%E5%A0%B1/%E3%82%BD%E3%83%95%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB2026/2026%E5%B9%B4%E3%83%BB%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E6%9C%80%E7%B5%82%E7%B5%90%E6%9E%9C%EF%BC%8804_19%EF%BC%89.pdf"
+                target="_blank" rel="noopener noreferrer"><img src="assets/image/result/map.png"
+                  alt="mapicon"><span>台町公園</span></a>
             </div>
-            <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/895" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>酒匂川スポーツ広場</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">ベスト 8</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_4.webp" alt="神奈川県家庭婦人連盟秋季大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date">
-                <time datetime="2025-09-28">2025.09.28</time>～<time datetime="2025-10-26">2025.10.26</time>
-              </span>
-              <h3>神奈川県<br>家庭婦人連盟秋季大会</h3>
+          </li>
+          <li>
+            <p class="label">3位</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_5.webp" alt="第18回 レディース秋季大会の様子" width="400" height="300">
             </div>
-            <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/863" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県 横浜市</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">3位</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_3.webp" alt="第43回 関東レディースソフトボール大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date"><time datetime="2025-10-05">2025.10.05</time></span>
-              <h3>第43回 関東レディース<br>ソフトボール大会</h3>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date">
+                  <time datetime="2026-03-29">2026.03.29</time>～<time datetime="2026-04-12">2026.04.12</time>
+                </span>
+                <h3>横浜市 家庭婦人<br>ソフトボール春季大会</h3>
+              </div>
+              <a href="https://www3.yspc.or.jp/ckfiles/files/%E5%8A%A0%E7%9B%9F%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93/%E7%AB%B6%E6%8A%80%E5%9B%A3%E4%BD%93%E6%83%85%E5%A0%B1/%E3%82%BD%E3%83%95%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB2026/2026%E5%B9%B4%E3%83%BB%E6%98%A5%E5%AD%A3%E3%83%9E%E3%83%9E%E3%81%95%E3%82%93%E6%9C%80%E7%B5%82%E7%B5%90%E6%9E%9C%EF%BC%8804_12).pdf"
+                target="_blank" rel="noopener noreferrer"><img src="assets/image/result/map.png"
+                  alt="mapicon"><span>神奈川県
+                  横浜市</span></a>
             </div>
-            <a href="http://kyoukai.chibasoft.main.jp/?eid=295#gsc.tab=0l" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>千葉県 浦安市</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">3位</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_1.webp" alt="第17回 全日本エルダー大会の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date"><time datetime="2025-09-20">2025.09.20</time>～<time
-                  datetime="2025-09-22">2025.09.22</time>
-              </span>
-              <h3>第17回 全日本エルダー大会</h3>
+          </li>
+          <li>
+            <p class="label">Dブロック 2位</p>
+            <div class="result__list--image">
+              <img src="assets/image/liners_top.jpg" alt="第18回 レディース秋季大会の様子" width="400" height="300">
             </div>
-            <a href="https://www.softball.or.jp/life/elder/tournament2025/tournament.html" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>栃木県 大田原市</span></a>
-          </div>
-        </li>
-        <li class="js-fadein">
-          <p class="label">優勝</p>
-          <div class="result__list--image">
-            <img src="assets/image/result/result_2.webp" alt="第17回 全日本エルダー大会神奈川県予選の様子" width="400" height="300">
-          </div>
-          <div class="result__list--text">
-            <div class="detebox">
-              <span class="date"><time datetime="2025-06-01">2025.06.01</time>～<time
-                  datetime="2025-06-08">2025.06.08</time>
-              </span>
-              <h3>第17回 全日本エルダー大会<br>神奈川県予選</h3>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date">
+                  <time datetime="2025-12-07">2025.12.07</time>
+                </span>
+                <h3>第18回 レディース秋季大会</h3>
+              </div>
+              <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/895" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png"
+                  alt="mapicon"><span>酒匂川スポーツ広場</span></a>
             </div>
-            <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/782" target="_blank"
-              rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県</span></a>
-          </div>
-        </li>
-      </ol>
+          </li>
+          <li>
+            <p class="label">ベスト 8</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_4.webp" alt="神奈川県家庭婦人連盟秋季大会の様子" width="400" height="300">
+            </div>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date">
+                  <time datetime="2025-09-28">2025.09.28</time>～<time datetime="2025-10-26">2025.10.26</time>
+                </span>
+                <h3>神奈川県<br>家庭婦人連盟秋季大会</h3>
+              </div>
+              <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/863" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県 横浜市</span></a>
+            </div>
+          </li>
+        </ol>
+        <ol class="result__list">
+          <li>
+            <p class="label">3位</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_3.webp" alt="第43回 関東レディースソフトボール大会の様子" width="400" height="300">
+            </div>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date"><time datetime="2025-10-05">2025.10.05</time></span>
+                <h3>第43回 関東レディース<br>ソフトボール大会</h3>
+              </div>
+              <a href="http://kyoukai.chibasoft.main.jp/?eid=295#gsc.tab=0l" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>千葉県 浦安市</span></a>
+            </div>
+          </li>
+          <li>
+            <p class="label">3位</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_1.webp" alt="第17回 全日本エルダー大会の様子" width="400" height="300">
+            </div>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date"><time datetime="2025-09-20">2025.09.20</time>～<time
+                    datetime="2025-09-22">2025.09.22</time>
+                </span>
+                <h3>第17回 全日本エルダー大会</h3>
+              </div>
+              <a href="https://www.softball.or.jp/life/elder/tournament2025/tournament.html" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>栃木県 大田原市</span></a>
+            </div>
+          </li>
+          <li>
+            <p class="label">優勝</p>
+            <div class="result__list--image">
+              <img src="assets/image/result/result_2.webp" alt="第17回 全日本エルダー大会神奈川県予選の様子" width="400" height="300">
+            </div>
+            <div class="result__list--text">
+              <div class="detebox">
+                <span class="date"><time datetime="2025-06-01">2025.06.01</time>～<time
+                    datetime="2025-06-08">2025.06.08</time>
+                </span>
+                <h3>第17回 全日本エルダー大会<br>神奈川県予選</h3>
+              </div>
+              <a href="https://www.kanagawaken-softballkyoukai.com/tournament/view/782" target="_blank"
+                rel="noopener noreferrer"><img src="assets/image/result/map.png" alt="mapicon"><span>神奈川県</span></a>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
     <section class="faq">
       <span class="item-left js-fadein"></span>
