@@ -613,12 +613,14 @@ body.top .result__list--container .slick-prev.slick-arrow {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-color: transparent;
 }
 body.top .result__list--container .slick-prev.slick-arrow.slick-disabled {
   background-image: url("/assets/image/arrow_close_prev.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-color: transparent;
 }
 body.top .result__list--container .slick-next.slick-arrow {
   position: absolute;
@@ -632,10 +634,12 @@ body.top .result__list--container .slick-next.slick-arrow {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-color: transparent;
 }
 body.top .result__list--container .slick-next.slick-arrow.slick-disabled {
   background-image: url("/assets/image/arrow_close_next.png");
   background-repeat: no-repeat;
+  background-color: transparent;
 }
 body.top .result__list--container .slick-dots {
   position: absolute;

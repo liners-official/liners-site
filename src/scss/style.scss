@@ -724,13 +724,14 @@ body.top {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        background-color: transparent;
       }
       .slick-prev.slick-arrow.slick-disabled {
         background-image: url('/assets/image/arrow_close_prev.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        
+        background-color: transparent;
       }
       .slick-next.slick-arrow {
         position: absolute;
@@ -744,10 +745,12 @@ body.top {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        background-color: transparent;
       }
       .slick-next.slick-arrow.slick-disabled {
         background-image: url('/assets/image/arrow_close_next.png');
         background-repeat: no-repeat;
+        background-color: transparent;
       }
       .slick-dots {
         position: absolute;
