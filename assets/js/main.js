@@ -29,6 +29,30 @@ window.addEventListener("DOMContentLoaded", () => {
   let scrollLocked = false;
   let scrollLockY = 0;
 
+  let resultArrowImagesPreloaded = false;
+  const preloadResultArrowImages = () => {
+    if (resultArrowImagesPreloaded) return;
+    resultArrowImagesPreloaded = true;
+
+    const sources = [
+      "/assets/image/arrow_open_prev.png",
+      "/assets/image/arrow_close_prev.png",
+      "/assets/image/arrow_open_next.png",
+      "/assets/image/arrow_close_next.png",
+    ];
+
+    sources.forEach((src) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = src;
+    });
+  };
+
+  // Preload early so arrow state changes never flash.
+  if (document.querySelector(".result__list--container")) {
+    preloadResultArrowImages();
+  }
+
   const initResultListContainerSlider = () => {
     const $ = window.jQuery;
     if (!$ || !$.fn || typeof $.fn.slick !== "function") return;
@@ -39,6 +63,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const slideCount = $container.children(".result__list").length;
     if (slideCount <= 1) return;
+
+    preloadResultArrowImages();
 
     $container.slick({
       slidesToShow: 1,

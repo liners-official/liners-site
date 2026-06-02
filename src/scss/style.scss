@@ -716,6 +716,7 @@ body.top {
         position: absolute;
         right: 3rem;
         bottom: -3rem;
+        z-index: 2;
         font-size: 0;
         border: none;
         width: 2rem;
@@ -737,6 +738,7 @@ body.top {
         position: absolute;
         right: 0;
         bottom: -3rem;
+        z-index: 2;
         font-size: 0;
         border: none;
         width: 2rem;
