@@ -769,6 +769,7 @@ body.top .RESULT__list li a {
 }
 body.top .information {
   position: relative;
+  margin-top: 9rem;
 }
 body.top .information .item-left {
   position: absolute;

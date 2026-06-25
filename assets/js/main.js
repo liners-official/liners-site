@@ -149,6 +149,90 @@ window.addEventListener("DOMContentLoaded", () => {
     fadeTargets.forEach((el) => io.observe(el));
   };
 
+  let informationConfettiInitialized = false;
+  const initInformationConfetti = () => {
+    if (informationConfettiInitialized) return;
+    informationConfettiInitialized = true;
+
+    const informationSection = document.querySelector(".information");
+    const confetti = window.confetti;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!informationSection || typeof confetti !== "function" || reduceMotion) {
+      return;
+    }
+
+    const startConfetti = () => {
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+      const randomInRange = (min, max) => Math.random() * (max - min) + min;
+      const particleCount = randomInRange(
+        isMobile ? 130 : 190,
+        isMobile ? 180 : 260,
+      );
+      const defaults = {
+        scalar: isMobile ? 0.65 : 0.75,
+        ticks: isMobile ? 220 : 260,
+        gravity: 0.55,
+        decay: 0.92,
+      };
+
+      confetti({
+        ...defaults,
+        angle: randomInRange(35, 55),
+        spread: randomInRange(50, 70),
+        particleCount,
+        origin: { x: 0, y: 0.6 },
+      });
+      confetti({
+        ...defaults,
+        angle: randomInRange(125, 145),
+        spread: randomInRange(50, 70),
+        particleCount,
+        origin: { x: 1, y: 0.6 },
+      });
+    };
+
+    if (typeof IntersectionObserver === "undefined") {
+      const onScroll = () => {
+        const rect = informationSection.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        const isNearCenter =
+          Math.abs(sectionCenter - viewportCenter) <= window.innerHeight * 0.25;
+
+        if (!isNearCenter) return;
+
+        startConfetti();
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", onScroll);
+      };
+
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          startConfetti();
+          io.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "-45% 0px -45% 0px",
+        threshold: 0,
+      },
+    );
+
+    io.observe(informationSection);
+  };
+
   // If a loading overlay exists, start it when the KV video is ready.
   const loading = document.getElementById("loading");
   const video = document.querySelector(".kv__video");
@@ -156,6 +240,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!loading) {
     tryAutoPlayInlineVideo(video);
     initScrollFadeIn();
+    initInformationConfetti();
     initResultListContainerSlider();
   } else {
     // Disable scrolling while the opening overlay is shown.
@@ -172,6 +257,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // Initialize fade-in while the overlay still covers the page,
         // so the animation becomes visible right after the overlay hides.
         initScrollFadeIn();
+        initInformationConfetti();
         loading.style.display = "none";
         unlockScroll();
         tryAutoPlayInlineVideo(video);
