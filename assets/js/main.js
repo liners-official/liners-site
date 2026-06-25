@@ -168,11 +168,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const isMobile = window.matchMedia("(max-width: 767px)").matches;
       const randomInRange = (min, max) => Math.random() * (max - min) + min;
       const particleCount = randomInRange(
-        isMobile ? 130 : 190,
         isMobile ? 180 : 260,
+        isMobile ? 240 : 340,
       );
       const defaults = {
-        scalar: isMobile ? 0.65 : 0.75,
+        scalar: isMobile ? 0.5 : 0.6,
         ticks: isMobile ? 220 : 260,
         gravity: 0.55,
         decay: 0.92,
