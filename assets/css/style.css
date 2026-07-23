@@ -497,6 +497,37 @@ body.top .training__list li .label {
 body.top .training__list li .content {
   margin-left: 0.625rem;
 }
+body.top .training .calendar-1,
+body.top .training .calendar-2 {
+  position: relative;
+  margin-top: 1rem;
+  z-index: 0;
+}
+body.top .training .calendar-1 .item-left,
+body.top .training .calendar-1 .item-right,
+body.top .training .calendar-2 .item-left,
+body.top .training .calendar-2 .item-right {
+  position: absolute;
+  width: 3rem;
+  height: 5rem;
+  top: -2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+body.top .training .calendar-1 .item-right {
+  right: -1rem;
+  background-image: url("/assets/image/item/item-22.webp");
+  width: 7rem;
+  height: 7rem;
+  top: 0rem;
+}
+body.top .training .calendar-2 .item-left {
+  left: 0.5rem;
+  background-image: url("/assets/image/item/item-23.webp");
+  width: 8rem;
+  height: 8rem;
+}
 body.top .cta {
   text-align: center;
   position: relative;
