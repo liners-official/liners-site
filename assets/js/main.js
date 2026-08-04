@@ -26,6 +26,42 @@ const tryAutoPlayInlineVideo = (video) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.querySelector(".menu-button");
+  const globalMenu = document.querySelector(".global-menu");
+
+  if (menuButton && globalMenu) {
+    const menuLinks = globalMenu.querySelectorAll('a[href^="#"]');
+
+    const closeMenu = ({ returnFocus = false } = {}) => {
+      menuButton.setAttribute("aria-expanded", "false");
+      globalMenu.setAttribute("aria-hidden", "true");
+      globalMenu.classList.remove("is-open");
+      document.body.classList.remove("is-menu-open");
+      if (returnFocus) menuButton.focus();
+    };
+
+    const openMenu = () => {
+      menuButton.setAttribute("aria-expanded", "true");
+      globalMenu.setAttribute("aria-hidden", "false");
+      globalMenu.classList.add("is-open");
+      document.body.classList.add("is-menu-open");
+      menuLinks[0]?.focus();
+    };
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    menuLinks.forEach((link) => link.addEventListener("click", () => closeMenu()));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && globalMenu.classList.contains("is-open")) {
+        closeMenu({ returnFocus: true });
+      }
+    });
+  }
+
   let scrollLocked = false;
   let scrollLockY = 0;
 

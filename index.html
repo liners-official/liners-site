@@ -51,6 +51,23 @@
 </head>
 
 <body class="top">
+  <header class="site-header">
+    <button class="menu-button" type="button" aria-controls="global-menu" aria-expanded="false">
+      <span class="menu-button__lines" aria-hidden="true"><span></span></span>
+      <span class="menu-button__text">MENU</span>
+    </button>
+    <nav class="global-menu" id="global-menu" aria-label="ページ内メニュー" aria-hidden="true">
+      <ul class="global-menu__list">
+        <li><a href="#about"><span>ABOUT</span>ライナーズについて</a></li>
+        <li><a href="#interview"><span>INTERVIEW</span>メンバーインタビュー</a></li>
+        <li><a href="#training"><span>TRAINING</span>練習について</a></li>
+        <li><a href="#information"><span>INFORMATION</span>最新情報</a></li>
+        <li><a href="#instagram"><span>INSTAGRAM</span>インスタグラム</a></li>
+        <li><a href="#result"><span>RESULT</span>試合結果</a></li>
+        <li><a href="#faq"><span>FAQ</span>よくある質問</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="inner">
     <div class="cta-mini">
       <div class="tama">
@@ -62,7 +79,7 @@
         <p>お問い合わせ</p>
       </a>
     </div>
-    <section class="kv">
+    <section class="kv" id="top">
       <video src="assets/image/kv/kv_mov.mp4" autoplay muted playsinline webkit-playsinline loop preload="auto"
         class="kv__video" poster="assets/image/kv/kv_thumbnail.webp"></video>
       <h1 class="kv__read">
@@ -74,7 +91,7 @@
     <div class="kv__scroll">
       <span>Scroll</span>
     </div>
-    <section class="about">
+    <section class="about" id="about">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="js-fadein">
@@ -130,7 +147,7 @@
     </div>
   </div>
   <div class="inner">
-    <section class="interview">
+    <section class="interview" id="interview">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="js-fadein">
@@ -263,7 +280,7 @@
         </li>
       </ul>
     </section>
-    <section class="training">
+    <section class="training" id="training">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="training js-fadein">
@@ -322,7 +339,7 @@
         target="_blank">お問い合わせはこちら！</a>
     </section>
 
-    <section class="information">
+    <section class="information" id="information">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="js-fadein">
@@ -348,7 +365,7 @@
     </section>
 
   </div>
-  <section class="Instagram">
+  <section class="Instagram" id="instagram">
     <div class="inner">
       <h2 class="js-fadein">
         <span class="head-en">Instagram</span>
@@ -453,7 +470,7 @@
         target="_blank">お問い合わせはこちら！</a>
     </section>
 
-    <section class="result">
+    <section class="result" id="result">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="js-fadein">
@@ -629,7 +646,7 @@
         </ol>
       </div>
     </section>
-    <section class="faq">
+    <section class="faq" id="faq">
       <span class="item-left js-fadein"></span>
       <span class="item-right js-fadein"></span>
       <h2 class="js-fadein">
