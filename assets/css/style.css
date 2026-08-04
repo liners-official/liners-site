@@ -212,8 +212,8 @@ body.top .global-menu {
   position: fixed;
   inset: 0;
   display: grid;
-  align-items: center;
-  padding: 2rem;
+  align-items: start;
+  padding: 4rem 2rem;
   background: rgba(44, 52, 84, 0.97);
   visibility: hidden;
   opacity: 0;

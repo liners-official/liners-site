@@ -249,8 +249,8 @@ body.top {
     position: fixed;
     inset: 0;
     display: grid;
-    align-items: center;
-    padding: 2rem;
+    align-items: start;
+    padding: 4rem 2rem;
     background: rgba($Navy, .97);
     visibility: hidden;
     opacity: 0;

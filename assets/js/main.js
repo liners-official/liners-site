@@ -40,17 +40,17 @@ window.addEventListener("DOMContentLoaded", () => {
       if (returnFocus) menuButton.focus();
     };
 
-    const openMenu = () => {
+    const openMenu = ({ focusFirstLink = false } = {}) => {
       menuButton.setAttribute("aria-expanded", "true");
       globalMenu.setAttribute("aria-hidden", "false");
       globalMenu.classList.add("is-open");
       document.body.classList.add("is-menu-open");
-      menuLinks[0]?.focus();
+      if (focusFirstLink) menuLinks[0]?.focus();
     };
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener("click", (event) => {
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      isOpen ? closeMenu() : openMenu();
+      isOpen ? closeMenu() : openMenu({ focusFirstLink: event.detail === 0 });
     });
 
     menuLinks.forEach((link) => link.addEventListener("click", () => closeMenu()));
