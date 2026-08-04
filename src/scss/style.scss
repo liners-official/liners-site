@@ -254,13 +254,13 @@ body.top {
     background: rgba($Navy, .97);
     visibility: hidden;
     opacity: 0;
-    transition: opacity .3s ease, visibility .3s ease;
     pointer-events: auto;
 
     &.is-open {
       height: 100vh;
       visibility: visible;
       opacity: 1;
+      transition: opacity .3s ease;
     }
 
     &__list {
@@ -275,14 +275,14 @@ body.top {
         display: flex;
         align-items: baseline;
         gap: .75rem;
-        padding: 1rem;
+        padding: 2rem 1rem 1rem;
         color: $white;
         font-size: .8rem;
 
         span {
           min-width: 7.2rem;
           font-family: $font-title;
-          font-size: 1rem;
+          font-size: 1.2rem;
           font-weight: 700;
         }
 
