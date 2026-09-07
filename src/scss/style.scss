@@ -892,8 +892,10 @@ body.top {
       &__item-visual {
         position: absolute;
         display: block;
-        width: clamp(7.5rem, 14vw, 6.5rem);
+        width: clamp(6.5rem, 32vw, 7.5rem);
+        height: clamp(6.5rem, 32vw, 7.5rem);
         aspect-ratio: 1 / 1;
+        box-sizing: border-box;
         flex-shrink: 0;
         overflow: hidden;
         border: .2rem solid $white;
