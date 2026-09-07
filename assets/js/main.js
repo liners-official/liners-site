@@ -185,6 +185,79 @@ window.addEventListener("DOMContentLoaded", () => {
     fadeTargets.forEach((el) => io.observe(el));
   };
 
+  const initTrainingMenuVideos = () => {
+    const videos = Array.from(
+      document.querySelectorAll(".training-menu__item-visual video"),
+    );
+    if (videos.length === 0) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    videos.forEach((trainingVideo) => {
+      trainingVideo.pause();
+      trainingVideo.muted = true;
+      trainingVideo.defaultMuted = true;
+    });
+
+    if (reduceMotion || typeof IntersectionObserver === "undefined") return;
+
+    const visibleVideos = new Set();
+    const playVideo = (trainingVideo) => {
+      if (document.hidden || !visibleVideos.has(trainingVideo)) return;
+
+      if (!trainingVideo.currentSrc) {
+        const src = trainingVideo.dataset.src;
+        if (!src) return;
+        trainingVideo.src = src;
+        trainingVideo.load();
+      }
+
+      trainingVideo
+        .play()
+        .then(() => {
+          if (document.hidden || !visibleVideos.has(trainingVideo)) {
+            trainingVideo.pause();
+          }
+        })
+        .catch(() => {
+          // Some browsers may block playback until the user interacts with the page.
+        });
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const trainingVideo = entry.target;
+
+          if (entry.isIntersecting) {
+            visibleVideos.add(trainingVideo);
+            playVideo(trainingVideo);
+            return;
+          }
+
+          visibleVideos.delete(trainingVideo);
+          trainingVideo.pause();
+        });
+      },
+      { threshold: 0.25 },
+    );
+
+    videos.forEach((trainingVideo) => io.observe(trainingVideo));
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        videos.forEach((trainingVideo) => trainingVideo.pause());
+        return;
+      }
+
+      visibleVideos.forEach(playVideo);
+    });
+  };
+
+  initTrainingMenuVideos();
+
   let informationConfettiInitialized = false;
   const initInformationConfetti = () => {
     if (informationConfettiInitialized) return;

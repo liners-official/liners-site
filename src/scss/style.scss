@@ -738,6 +738,190 @@ body.top {
       }
     }
 
+    &-menu {
+      margin-top: 2rem;
+      padding: 1.75rem 1rem 1.5rem;
+      overflow: hidden;
+      background-color: $white;
+      border-radius: 1.4rem;
+      box-shadow: 0 .25rem 1rem rgba($Navy, .08);
+
+      &__heading {
+        text-align: center;
+
+        &-en {
+          color: $Thema-color;
+          font-family: $font-title;
+          font-size: .75rem;
+          font-weight: 800;
+          letter-spacing: .12em;
+        }
+
+        h3 {
+          margin-top: .25rem;
+          color: $Navy;
+          font-size: 1.2rem;
+        }
+      }
+
+      &__lead {
+        margin-top: 1rem;
+        color: $text-color;
+        font-size: .875rem;
+        line-height: 1.8;
+      }
+
+      &__list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 1.25rem;
+        padding: 1rem 0;
+        list-style: none;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: .2rem;
+          border-radius: 999px;
+          background-color: $Thema-color;
+          content: "";
+          transform: translateX(-50%);
+        }
+      }
+
+      &__item {
+        position: relative;
+        display: flex;
+        width: 100%;
+        min-height: 6rem;
+        align-items: center;
+        z-index: 0;
+
+        &--left {
+          justify-content: flex-start;
+
+          .training-menu__number {
+            left: 50%;
+          }
+
+          .training-menu__item-visual {
+            top: 55%;
+            right: 0;
+            transform: translateY(-50%) rotate(7deg);
+          }
+
+        }
+
+        &--right {
+          justify-content: flex-end;
+          text-align: right;
+
+          .training-menu__number {
+            left: 50%;
+          }
+
+          .training-menu__item-visual {
+            top: 58%;
+            left: 0;
+            transform: translateY(-50%) rotate(-7deg);
+          }
+
+        }
+
+        &:nth-child(3n + 2) .training-menu__content {
+          background-color: #FFF0CF;
+          transform: rotate(1.5deg);
+        }
+
+        &:nth-child(3n) .training-menu__content {
+          background-color: #E9F1FF;
+          transform: rotate(-1.5deg);
+        }
+
+        &:nth-child(3n) .training-menu__item-visual {
+          top: 55%;
+        }
+
+        &:nth-child(3n + 2) .training-menu__item-visual {
+          top: 45%;
+        }
+
+      }
+
+      &__content {
+        position: relative;
+        width: calc(50% - 1.75rem);
+        padding: .9rem .4rem;
+        border: .125rem solid $Navy;
+        border-radius: 1rem;
+        background-color: #FFF1F2;
+        box-shadow: .2rem .25rem 0 $Navy;
+        color: $Navy;
+        font-size: clamp(.68rem, 3vw, .8rem);
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: center;
+        white-space: nowrap;
+
+      }
+
+      &__number {
+        position: absolute;
+        top: 50%;
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: .2rem solid $white;
+        border-radius: 50%;
+        background-color: $Thema-color;
+        font-family: $font-title;
+        font-size: .68rem;
+        font-weight: 800;
+        line-height: 1;
+        color: $white;
+        box-shadow: 0 0 0 .125rem $Thema-color;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+
+      &__item-visual {
+        position: absolute;
+        display: block;
+        width: clamp(7.5rem, 14vw, 6.5rem);
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        overflow: hidden;
+        border: .2rem solid $white;
+        border-radius: 50%;
+        box-shadow: 0 0 0 .15rem $Thema-color, .15rem .2rem 0 rgba($Navy, .3);
+        z-index: 3;
+
+        img,
+        video {
+          display: block;
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 1 / 1;
+          margin: 0;
+          border-radius: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      &__note {
+        margin-top: 3rem;
+        color: $gray;
+        font-size: .75rem;
+        line-height: 1.6;
+      }
+    }
+
     .calendar-1,
     .calendar-2 {
       position: relative;
