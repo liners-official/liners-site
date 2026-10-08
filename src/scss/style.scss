@@ -632,6 +632,7 @@ body.top {
       inset: 0;
       isolation: isolate;
       color: $white;
+      touch-action: manipulation;
 
       &::after {
         content: '';
@@ -652,7 +653,9 @@ body.top {
         .softball-categories__label { right: 7%; bottom: 19%; }
       }
 
-      &:hover .softball-categories__image { transform: scale(1.04); }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover .softball-categories__image { transform: scale(1.04); }
+      }
       &:focus-visible .softball-categories__label { outline: 2px solid $white; outline-offset: 6px; border-radius: .25rem; }
     }
 

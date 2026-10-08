@@ -545,6 +545,7 @@ body.top .softball-categories__link {
   inset: 0;
   isolation: isolate;
   color: #fff;
+  touch-action: manipulation;
 }
 body.top .softball-categories__link::after {
   content: "";
@@ -568,8 +569,10 @@ body.top .softball-categories__link--elder .softball-categories__label {
   right: 7%;
   bottom: 19%;
 }
-body.top .softball-categories__link:hover .softball-categories__image {
-  transform: scale(1.04);
+@media (hover: hover) and (pointer: fine) {
+  body.top .softball-categories__link:hover .softball-categories__image {
+    transform: scale(1.04);
+  }
 }
 body.top .softball-categories__link:focus-visible .softball-categories__label {
   outline: 2px solid #fff;
