@@ -500,6 +500,17 @@ body.top {
     margin-top: 2rem;
     position: relative;
 
+    &__category-link {
+      color: $Thema-color;
+      text-decoration: underline;
+      text-underline-offset: .2em;
+
+      &:focus-visible {
+        outline: 2px solid $Thema-color;
+        outline-offset: 3px;
+      }
+    }
+
     .item-left {
       position: absolute;
       width: 5rem;
@@ -587,6 +598,86 @@ body.top {
       to {
         transform: translateX(calc(-50% - 10px));
       }
+    }
+  }
+
+  .softball-categories {
+    margin-top: 3rem;
+
+    &__square {
+      position: relative;
+      isolation: isolate;
+      aspect-ratio: 1;
+      margin-top: 2rem;
+      overflow: hidden;
+      border-radius: 1.875rem;
+      background: $Navy;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        width: 142%;
+        height: 2px;
+        background: rgba(255, 255, 255, .65);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        pointer-events: none;
+      }
+    }
+
+    &__link {
+      position: absolute;
+      inset: 0;
+      isolation: isolate;
+      color: $white;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, rgba(196, 44, 53, .62), rgba(44, 52, 84, .88));
+        pointer-events: none;
+      }
+
+      &--ladies {
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        .softball-categories__label { left: 7%; top: 19%; }
+      }
+
+      &--elder {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        .softball-categories__label { right: 7%; bottom: 19%; }
+      }
+
+      &:hover .softball-categories__image { transform: scale(1.04); }
+      &:focus-visible .softball-categories__label { outline: 2px solid $white; outline-offset: 6px; border-radius: .25rem; }
+    }
+
+    &__image {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .3s ease;
+    }
+
+    &__label { position: absolute; display: flex; flex-direction: column; align-items: center; line-height: 1.6; text-align: center; }
+    &__name { font-family: $font-title; font-size: clamp(1.25rem, 6vw, 1.875rem); font-weight: 800; }
+    &__japanese { font-size: .875rem; font-weight: 700; }
+    &__action { margin-top: .75rem; font-size: .75rem; text-decoration: underline; text-underline-offset: .25em; }
+
+    @media (prefers-reduced-motion: reduce) {
+      &__image { transition: none; }
+      &__link:hover .softball-categories__image { transform: none; }
     }
   }
 

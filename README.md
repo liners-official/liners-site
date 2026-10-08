@@ -69,3 +69,14 @@ JavaScript（`assets/js/main.js`）はビルド不要で、そのまま配信さ
     ├── information.scss
     └── blog.scss
 ```
+
+## ソフトボール紹介ページ
+
+- `/ladies/`：レディースソフトボールとは（`ladies/index.html`）
+- `/elder/`：エルダーソフトボールとは（`elder/index.html`）
+- 共通スタイル：`src/scss/softball.scss` → `assets/css/softball.css`
+
+トップページを第1階層、各紹介ページを第2階層とした構成です。
+`npm run watch` または `npm run dev` で既存SCSSと共通SCSSを監視します。
+`npm run build` で共通CSSも本番用に圧縮出力します。
+紹介文は各HTML、スタイルは共通SCSSを編集してください。

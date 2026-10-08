@@ -430,6 +430,15 @@ body.top .about {
   margin-top: 2rem;
   position: relative;
 }
+body.top .about__category-link {
+  color: #C42C35;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+body.top .about__category-link:focus-visible {
+  outline: 2px solid #C42C35;
+  outline-offset: 3px;
+}
 body.top .about .item-left {
   position: absolute;
   width: 5rem;
@@ -505,6 +514,110 @@ body.top .loop-wrap .loop-track img {
   }
   to {
     transform: translateX(calc(-50% - 10px));
+  }
+}
+body.top .softball-categories {
+  margin-top: 3rem;
+}
+body.top .softball-categories__square {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 1;
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: 1.875rem;
+  background: #2C3454;
+}
+body.top .softball-categories__square::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 142%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.65);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  pointer-events: none;
+}
+body.top .softball-categories__link {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  color: #fff;
+}
+body.top .softball-categories__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(196, 44, 53, 0.62), rgba(44, 52, 84, 0.88));
+  pointer-events: none;
+}
+body.top .softball-categories__link--ladies {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+body.top .softball-categories__link--ladies .softball-categories__label {
+  left: 7%;
+  top: 19%;
+}
+body.top .softball-categories__link--elder {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+body.top .softball-categories__link--elder .softball-categories__label {
+  right: 7%;
+  bottom: 19%;
+}
+body.top .softball-categories__link:hover .softball-categories__image {
+  transform: scale(1.04);
+}
+body.top .softball-categories__link:focus-visible .softball-categories__label {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+  border-radius: 0.25rem;
+}
+body.top .softball-categories__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+body.top .softball-categories__label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+  text-align: center;
+}
+body.top .softball-categories__name {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: clamp(1.25rem, 6vw, 1.875rem);
+  font-weight: 800;
+}
+body.top .softball-categories__japanese {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+body.top .softball-categories__action {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.top .softball-categories__image {
+    transition: none;
+  }
+  body.top .softball-categories__link:hover .softball-categories__image {
+    transform: none;
   }
 }
 body.top .interview {
