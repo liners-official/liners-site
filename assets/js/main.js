@@ -422,13 +422,6 @@ document.querySelectorAll(".question").forEach((q) => {
   });
 });
 
-document.addEventListener(
-  "contextmenu",
-  function (event) {
-    event.preventDefault();
-  },
-  false,
-);
 
 const tama = document.querySelector(".tama");
 const tamaImage = document.querySelector(".tama img");
