@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -18,13 +16,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
         with:
           node-version: 24
           cache: npm
@@ -38,25 +41,41 @@ jobs:
       - name: Prepare Pages files
         run: |
           mkdir -p _site
-          rsync -av --delete \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='node_modules' \
-            --exclude='src' \
-            --exclude='package.json' \
-            --exclude='package-lock.json' \
-            --exclude='_site' \
-            ./ _site/
+          cp index.html robots.txt sitemap.xml _site/
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+          for directory in assets ladies elder interview liners; do
+            mkdir -p "_site/$directory"
+            rsync -a --delete --delete-excluded \
+              --exclude='.*' \
+              --include='*/' \
+              --include='*.html' \
+              --include='*.css' \
+              --include='*.js' \
+              --include='*.webp' \
+              --include='*.png' \
+              --include='*.jpg' \
+              --include='*.jpeg' \
+              --include='*.JPG' \
+              --include='*.JPEG' \
+              --include='*.svg' \
+              --include='*.ico' \
+              --include='*.mp4' \
+              --exclude='*' \
+              "$directory/" "_site/$directory/"
+          done
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:
           path: _site
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -66,4 +85,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346

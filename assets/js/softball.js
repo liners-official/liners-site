@@ -1,4 +1,3 @@
-// パララックスをスクロールに連動させる。OPはCSSで完結させる。
 (() => {
   const sections = [...document.querySelectorAll('[data-parallax]')];
   if (!sections.length) return;
@@ -26,7 +25,6 @@
         element.style.removeProperty('--photo-y');
         return;
       }
-      // transformを含まない配置位置を基準にし、前フレームの移動量の影響を避ける。
       const parent = element.offsetParent;
       if (!parent) return;
       const top = parent.getBoundingClientRect().top + element.offsetTop;

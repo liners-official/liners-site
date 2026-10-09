@@ -6,3 +6,10 @@ node_modules/
 
 # Sass
 .sass-cache/
+
+_site/
+.env
+.env.*
+!.env.example
+*.pem
+*.key

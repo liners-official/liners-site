@@ -1,7 +1,6 @@
 const tryAutoPlayInlineVideo = (video) => {
   if (!video) return;
 
-  // Autoplay on mobile usually requires muted + playsinline.
   video.muted = true;
   video.defaultMuted = true;
   video.setAttribute("muted", "");
@@ -84,7 +83,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Preload early so arrow state changes never flash.
   if (document.querySelector(".result__list--container")) {
     preloadResultArrowImages();
   }
@@ -222,7 +220,6 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         })
         .catch(() => {
-          // Some browsers may block playback until the user interacts with the page.
         });
     };
 
@@ -342,7 +339,6 @@ window.addEventListener("DOMContentLoaded", () => {
     io.observe(informationSection);
   };
 
-  // If a loading overlay exists, start it when the KV video is ready.
   const loading = document.getElementById("loading");
   const video = document.querySelector(".kv__video");
 
@@ -352,7 +348,6 @@ window.addEventListener("DOMContentLoaded", () => {
     initInformationConfetti();
     initResultListContainerSlider();
   } else {
-    // Disable scrolling while the opening overlay is shown.
     lockScroll();
 
     let started = false;
@@ -363,8 +358,6 @@ window.addEventListener("DOMContentLoaded", () => {
       loading.classList.add("active");
 
       window.setTimeout(() => {
-        // Initialize fade-in while the overlay still covers the page,
-        // so the animation becomes visible right after the overlay hides.
         initScrollFadeIn();
         initInformationConfetti();
         loading.style.display = "none";
@@ -397,7 +390,6 @@ document.querySelectorAll(".question").forEach((q) => {
     const answer = q.nextElementSibling;
 
     if (q.classList.contains("is-open")) {
-      // 閉じる
       answer.style.height = answer.scrollHeight + "px";
 
       requestAnimationFrame(() => {
@@ -406,7 +398,6 @@ document.querySelectorAll(".question").forEach((q) => {
 
       q.classList.remove("is-open");
     } else {
-      // 開く前にリセット
       answer.style.height = "auto";
       const height = answer.scrollHeight;
 
@@ -418,7 +409,6 @@ document.querySelectorAll(".question").forEach((q) => {
 
       q.classList.add("is-open");
 
-      // 開いた後はautoに戻す
       answer.addEventListener(
         "transitionend",
         () => {

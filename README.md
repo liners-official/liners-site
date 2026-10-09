@@ -80,3 +80,19 @@ JavaScript（`assets/js/main.js`）はビルド不要で、そのまま配信さ
 `npm run watch` または `npm run dev` で既存SCSSと共通SCSSを監視します。
 `npm run build` で共通CSSも本番用に圧縮出力します。
 紹介文は各HTML、スタイルは共通SCSSを編集してください。
+
+## メンバーインタビュー
+
+TOPの一覧から、`interview/am/`、`interview/miu/`、`interview/non/`、`interview/natsumi/` に遷移します。
+詳細ページは `src/scss/softball.scss` と `assets/js/softball.js` を共用します。
+インタビュー本文は各ディレクトリの `index.html` で編集します。
+
+`interview/index.html` はメンバー一覧です。共通の `softball.scss` を使用し、詳細ページのパンくず・一覧へ戻るリンクと接続しています。
+
+## 公開ファイルとセキュリティ
+
+GitHub Pagesには、TOP・robots.txt・sitemap.xml・CNAME（存在する場合）と、assets / ladies / elder / interview / liners 内のHTML・CSS・JavaScript・画像・MP4のみをコピーします。隠しファイル、ソースマップ、開発用設定は配信しません。ページのディレクトリやファイル形式を追加した場合は、デプロイworkflowの許可リストも更新してください。
+
+GitHub ActionsはコミットSHAで固定し、書き込み権限はデプロイjobだけに付与しています。Action更新時は公式リポジトリのSHAを確認してください。jQuery・canvas-confettiはSRIを設定しているため、URLやバージョンを変える際は検証ハッシュも更新してください。Google Analytics・Instagram・天気ウィジェットなど、内容が変わる外部サービスのスクリプトは引き続き利用しています。
+
+依存パッケージの確認は `npm audit`、ビルド確認は `npm run build` で行います。GitHubアカウントの2段階認証やmainの保護設定はGitHub側で管理します。

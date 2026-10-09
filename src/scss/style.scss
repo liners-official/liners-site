@@ -7,9 +7,7 @@ $font-text: 'Zen Kaku Gothic New', sans-serif;
 $font-title: 'Roboto Slab', sans-serif;
 
 html {
-  /* 375px のとき 1rem = 16px */
   font-size: 16px;
-  /* 375px 未満は縮む（最小14px）、375px 以上は 16px で固定 */
   font-size: clamp(14px, calc(100vw * 16 / 375), 16px);
   scroll-behavior: smooth;
 }
@@ -450,7 +448,6 @@ body.top {
       text-align: center;
       margin-top: 1rem;
 
-      /* 矢印のアニメーション部分 */
       &::before {
         animation: scroll 2s infinite;
         border-bottom: 1px solid #000;
@@ -465,7 +462,6 @@ body.top {
         width: 1.25rem;
       }
 
-      /* 矢印のアニメーション */
       @keyframes scroll {
         0% {
           opacity: 0;
@@ -719,64 +715,36 @@ body.top {
       flex-direction: column;
       gap: 1.25rem;
 
-      &--item {
-        background-color: $white;
-        padding: 1rem;
-        border-radius: 1.4rem;
+      &--item { background-color: $white; border-radius: 1.4rem; }
+    }
 
-        .profile {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: 1rem;
+      color: $text-color;
+      border-radius: 1.4rem;
+      touch-action: manipulation;
 
-          img {
-            max-width: 100%;
-            width: 3.75rem;
-            height: 3.75rem;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0;
-          }
-
-          h3 {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1;
-          }
-
-          p {
-            color: $gray;
-            letter-spacing: 4%;
-            margin-top: .5rem;
-          }
-        }
-
-        .text {
-          margin-top: 1rem;
-
-          li {
-            margin-top: 1.25rem;
-
-            &:first-child {
-              margin-top: 0;
-            }
-
-            p {
-              margin-top: .5rem;
-              line-height: 1.7;
-
-              &:first-child {
-                margin-top: 0;
-              }
-            }
-
-            .comment {
-              line-height: 2;
-            }
-          }
-        }
+      &:focus-visible { outline: 2px solid $Thema-color; outline-offset: 4px; }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover { background: #fcebed; }
       }
     }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 0;
+      img { width: 3.75rem; height: 3.75rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; margin: 0; }
+      h3 { font-size: 1rem; font-weight: 700; line-height: 1.5; }
+      p { color: $gray; margin-top: .5rem; font-size: .875rem; line-height: 1.6; }
+    }
+
+    &__arrow { flex-shrink: 0; color: $Thema-color; font-size: 1.25rem; }
   }
 
   .training {
@@ -1583,3 +1551,5 @@ body.top {
     }
   }
 }
+
+.interview__all { display: block; margin: 2rem 7% 0; padding: 1rem; color: #2c3454; text-align: center; font-size: .875rem; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
