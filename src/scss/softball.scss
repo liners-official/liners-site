@@ -208,19 +208,11 @@ html {
   &__card:is(a) { display: block; color: $navy; text-decoration: none; touch-action: manipulation; }
   &__portrait {
     position: relative;
-    padding: 12%;
+    padding: .5rem;
     border-radius: 50%;
-    background: #fff9ed;
-    box-shadow: inset -.2rem -.3rem .6rem rgba(44,52,84,.12), 0 .25rem .75rem rgba(44,52,84,.08);
+    background: linear-gradient(180deg, rgba(196,44,53,.62), rgba(44,52,84,.88));
+    box-shadow: 0 .25rem .75rem rgba(44,52,84,.12);
     img { display: block; width: 100%; aspect-ratio: 1; height: auto; border-radius: 50%; object-fit: cover; object-position: center; }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: url('../image/interview/softball_seams.svg') center / contain no-repeat;
-      pointer-events: none;
-    }
   }
   &__label { position: absolute; z-index: 1; bottom: .25rem; right: -.25rem; padding: .5rem .65rem; background: $navy; color: #fff; border-radius: 2rem; font-family: inherit; font-size: .75rem; font-weight: 700; line-height: 1.5; }
   &__info { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(44,52,84,.2); }
@@ -228,7 +220,7 @@ html {
   &__info p { margin-top: .35rem; color: #555; font-size: .75rem; line-height: 1.8; }
   &__arrow { flex-shrink: 0; color: $accent; font-size: 1.25rem; }
   @media (hover: hover) and (pointer: fine) {
-    &__card:hover .interview-index__portrait { background: #f8e8df; }
+    &__card:hover .interview-index__portrait { background: linear-gradient(180deg, $accent, $navy); }
     &__card:hover h3 { color: $accent; }
   }
 }

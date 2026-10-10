@@ -91,8 +91,7 @@ TOPの一覧から、`interview/am/`、`interview/miu/`、`interview/non/`、`in
 
 ## 公開ファイルとセキュリティ
 
-GitHub Pagesには、TOP・robots.txt・sitemap.xml・CNAME（存在する場合）と、assets / ladies / elder / interview / liners 内のHTML・CSS・JavaScript・画像・MP4のみをコピーします。隠しファイル、ソースマップ、開発用設定は配信しません。ページのディレクトリやファイル形式を追加した場合は、デプロイworkflowの許可リストも更新してください。
+GitHub Pagesには、TOP・robots.txt・sitemap.xml・CNAME（存在する場合）と、assets / ladies / elder / interview / liners 内のHTML・CSS・JavaScript・画像・MP4のみをコピーします。隠しファイル、ソースマップ、開発用設定は配信しません。
 
 GitHub ActionsはコミットSHAで固定し、書き込み権限はデプロイjobだけに付与しています。Action更新時は公式リポジトリのSHAを確認してください。jQuery・canvas-confettiはSRIを設定しているため、URLやバージョンを変える際は検証ハッシュも更新してください。Google Analytics・Instagram・天気ウィジェットなど、内容が変わる外部サービスのスクリプトは引き続き利用しています。
 
-依存パッケージの確認は `npm audit`、ビルド確認は `npm run build` で行います。GitHubアカウントの2段階認証やmainの保護設定はGitHub側で管理します。

@@ -51,6 +51,7 @@
   <script src="assets/js/main.js" defer></script>
   <link rel="stylesheet" href="assets/css/image-protection.css">
   <script src="assets/js/image-protection.js" defer></script>
+  <script src="assets/js/contact-tracking.js" defer></script>
 </head>
 
 <body class="top">
@@ -78,7 +79,7 @@
       <div class="tama">
         <img src="assets/image/tama.webp" alt="たまちゃん" width="40" height="40">
       </div>
-      <a class="cta-mini-content"
+      <a data-contact-position="floating" class="cta-mini-content"
         href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" target="_blank"
         rel="noopener noreferrer">
         <p>お問い合わせ</p>
@@ -152,7 +153,7 @@
     </div>
   </div>
   <div class="inner">
-    <section class="softball-categories" aria-labelledby="softball-categories-title">
+    <section class="softball-categories js-fadein" aria-labelledby="softball-categories-title">
       <div class="softball-categories__square">
         <a class="softball-categories__link softball-categories__link--ladies" href="ladies/" aria-label="レディースソフトボールとは">
           <img class="softball-categories__image" src="assets/image/ladies/ladies_kv.webp" alt="" width="666" height="1000" loading="lazy" decoding="async">
@@ -182,6 +183,7 @@
       <ul class="interview__list">
         <li class="interview__list--item js-fadein">
           <a class="interview__link" href="interview/am/" aria-label="A.M さんのインタビューを読む">
+            <img class="interview__background" src="assets/image/interview/am_kv.webp" alt="" loading="lazy" decoding="async">
             <div class="profile">
               <img src="assets/image/interview/am_interview.webp" alt="" width="60" height="60" loading="lazy" decoding="async">
               <div>
@@ -194,6 +196,7 @@
         </li>
         <li class="interview__list--item js-fadein">
           <a class="interview__link" href="interview/miu/" aria-label="みうさんのインタビューを読む">
+            <img class="interview__background" src="assets/image/interview/miu_kv.webp" alt="" loading="lazy" decoding="async">
             <div class="profile">
               <img src="assets/image/interview/miu_interview.webp" alt="" width="60" height="60" loading="lazy" decoding="async">
               <div>
@@ -206,6 +209,7 @@
         </li>
         <li class="interview__list--item js-fadein">
           <a class="interview__link" href="interview/non/" aria-label="のんさんのインタビューを読む">
+            <img class="interview__background" src="assets/image/interview/non_kv.webp" alt="" loading="lazy" decoding="async">
             <div class="profile">
               <img src="assets/image/interview/non.webp" alt="" width="60" height="60" loading="lazy" decoding="async">
               <div>
@@ -218,6 +222,7 @@
         </li>
         <li class="interview__list--item js-fadein">
           <a class="interview__link" href="interview/natsumi/" aria-label="畑田 なつみさんのインタビューを読む">
+            <img class="interview__background" src="assets/image/interview/natsumi_kv.webp" alt="" loading="lazy" decoding="async">
             <div class="profile">
               <img src="assets/image/interview/natsumi_interview.webp" alt="" width="60" height="60" loading="lazy" decoding="async">
               <div>
@@ -229,7 +234,10 @@
           </a>
         </li>
       </ul>
-      <a class="interview__all" href="interview/">メンバーインタビュー一覧を見る →</a>
+      <a class="interview__all js-fadein" href="interview/">
+        <span class="interview__all-copy"><span class="interview__all-eyebrow" aria-hidden="true">MEET OUR MEMBERS</span><span>メンバーインタビュー<br>一覧を見る</span></span>
+        <span class="interview__all-arrow" aria-hidden="true">→</span>
+      </a>
     </section>
     <section class="training" id="training">
       <span class="item-left js-fadein"></span>
@@ -257,9 +265,22 @@
           <p class="label">練習日</p>
           <p class="content">毎週 火曜日(祝日以外)/土曜日</p>
         </li>
-        <li class="js-fadein">
+        <li class="training__time js-fadein">
           <p class="label">開始時間</p>
-          <p class="content">火曜日 AM9:00/土曜日 AM7:00</p>
+          <dl class="content training__schedule">
+            <div class="training__schedule-day">
+              <dt>火曜日</dt>
+              <dd><p class="training__schedule-row"><span>通年</span><strong><time datetime="09:00">9:00</time>開始</strong></p></dd>
+            </div>
+            <div class="training__schedule-day">
+              <dt>土曜日</dt>
+              <dd>
+                <p class="training__schedule-row"><span>3月〜12月</span><strong><time datetime="07:00">7:00</time>開始</strong></p>
+                <p class="training__schedule-row"><span>1月〜2月</span><strong><time datetime="08:00">8:00</time>開始</strong></p>
+                <p class="training__schedule-note">※開始時間は変更になる場合があります。</p>
+              </dd>
+            </div>
+          </dl>
         </li>
         <li class="js-fadein">
           <p>※雨天中止の場合があります</p>
@@ -351,7 +372,7 @@
     <section class="cta">
       <span class="item-left js-fadein ai"></span>
       <p class="js-fadein">\ チームメンバー募集中！ /</p>
-      <a href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
+      <a data-contact-position="training" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
         target="_blank" rel="noopener noreferrer">お問い合わせはこちら！</a>
     </section>
 
@@ -482,7 +503,7 @@
     <section class="cta">
       <span class="item-left js-fadein hai"></span>
       <p class="js-fadein">\ チームメンバー募集中！ /</p>
-      <a href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
+      <a data-contact-position="instagram" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
         target="_blank" rel="noopener noreferrer">お問い合わせはこちら！</a>
     </section>
 
@@ -694,31 +715,40 @@
         </li>
         <li class="js-fadein">
           <h3 class="question">練習に参加したいのですが、どうすればいいですか？</h3>
-          <p class="answer"><a href="https://www.instagram.com/liners_oga/?utm_source=ig_embed" target="_blank"
-              rel="noopener noreferrer">Instagram</a>のDMへご希望の日程をお送りください！担当者より返信いたします。</p>
+          <p class="answer"><a data-contact-position="faq" href="https://www.instagram.com/liners_oga/?utm_source=ig_embed" target="_blank"
+              rel="noopener noreferrer">Instagram</a>のDMにて体験希望の旨ご連絡ください！<br>担当者より返信いたします🙌</p>
         </li>
         <li class="js-fadein">
           <h3 class="question">年齢制限はありますか？</h3>
-          <p class="answer">16歳以上の女性が対象です。</p>
+          <p class="answer">16歳以上の女性が対象です🙆‍♀️</p>
         </li>
         <li class="js-fadein">
           <h3 class="question">一人で参加しても大丈夫ですか？</h3>
-          <p class="answer">もちろんです！一人での参加も大歓迎です。チームメンバーがサポートしますので安心してください。</p>
+          <p class="answer">もちろんです！一人での参加も大歓迎です。<br>チームメンバーがサポートしますので安心してください。</p>
         </li>
         <li class="js-fadein">
           <h3 class="question">友人と一緒に参加したいのですが大丈夫ですか？</h3>
           <p class="answer">もちろんです！ご友人と一緒の参加も大歓迎です。</p>
         </li>
         <li class="js-fadein">
+          <h3 class="question">練習時間を教えてください！</h3>
+          <p class="answer">下記練習時間を予定しております！<br><br>【3月〜12月】<br>火曜日 AM9:00~12:00<br>土曜日 AM7:00~11:00<br><br>【1月〜2月】<br>火曜日 AM9:00~12:00<br>土曜日 AM8:00~11:00<br><br>体験のご相談時に当日の練習時間を改めて共有させていただきます☺️
+          </p>
+        </li>
+        <li class="js-fadein">
           <h3 class="question">活動頻度はどのくらいですか？</h3>
           <p class="answer">週に2回程度活動を行っています!<br>火曜日・土曜日に練習を行なっています。<br>試合は日曜日に行われることが多いです。</p>
+        </li>
+        <li class="js-fadein">
+          <h3 class="question">グローブの貸し出しはありますか？</h3>
+          <p class="answer">グローブの貸し出しはございません🙇‍♀️<br>チームバットやヘルメットそのほかチーム練習で必要な道具は揃っておりますので運動着や帽子・スパイクなどは事前にご用意をお願いいたします！</p>
         </li>
       </ul>
     </section>
 
     <section class="cta">
       <p class="js-fadein">\ チームメンバー募集中！ /</p>
-      <a href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
+      <a data-contact-position="bottom" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr" class="js-fadein"
         target="_blank" rel="noopener noreferrer">お問い合わせはこちら！</a>
     </section>
 
@@ -727,7 +757,7 @@
   <footer>
     <span class="item-left js-fadein"></span>
     <div class="footer__nav">
-      <a href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr">
+      <a data-contact-position="footer" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&utm_source=qr">
         <img src="/assets/image/Instagram/Instagram_Glyph_White.webp" alt=""><span>お問い合わせ</span></a>
     </div>
     <p>©2026 liners. All Rights Reserved.</p>

@@ -719,19 +719,46 @@ body.top {
     }
 
     &__link {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: $Navy;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: .75rem;
       padding: 1rem;
-      color: $text-color;
+      color: $white;
       border-radius: 1.4rem;
       touch-action: manipulation;
 
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, rgba(196, 44, 53, .62), rgba(44, 52, 84, .88));
+        pointer-events: none;
+      }
+
       &:focus-visible { outline: 2px solid $Thema-color; outline-offset: 4px; }
       @media (hover: hover) and (pointer: fine) {
-        &:hover { background: #fcebed; }
+        &:hover .interview__background { transform: scale(1.04); }
       }
+    }
+
+    &__background {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform .3s ease;
     }
 
     .profile {
@@ -741,11 +768,16 @@ body.top {
       min-width: 0;
       img { width: 3.75rem; height: 3.75rem; flex-shrink: 0; border-radius: 50%; object-fit: cover; margin: 0; }
       h3 { font-size: 1rem; font-weight: 700; line-height: 1.5; }
-      p { color: $gray; margin-top: .5rem; font-size: .875rem; line-height: 1.6; }
+      p { color: rgba($white, .9); margin-top: .5rem; font-size: .875rem; line-height: 1.6; }
     }
 
-    &__arrow { flex-shrink: 0; color: $Thema-color; font-size: 1.25rem; }
+    &__arrow { flex-shrink: 0; color: $white; font-size: 1.25rem; }
   }
+
+    @media (prefers-reduced-motion: reduce) {
+      .interview__background { transition: none; }
+      .interview__link:hover .interview__background { transform: none; }
+    }
 
   .training {
     position: relative;
@@ -797,6 +829,32 @@ body.top {
         .content {
           margin-left: .625rem;
         }
+      }
+    }
+
+    &__list li.training__time {
+      align-items: flex-start;
+      > .label { flex-shrink: 0; margin-top: .75rem; }
+    }
+
+    &__schedule {
+      flex: 1;
+      min-width: 0;
+      padding: .75rem;
+      background: $white;
+      border-radius: .75rem;
+      &-day + .training__schedule-day { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid rgba($Navy, .15); }
+      dt { color: $Navy; font-weight: 700; margin-bottom: .35rem; }
+      &-note { margin-top: .75rem; font-size: .75rem; line-height: 1.7; color: #555; }
+      &-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: baseline;
+        gap: .25rem .5rem;
+        font-size: .875rem;
+        + .training__schedule-row { margin-top: .4rem; }
+        strong { color: $Navy; white-space: nowrap; }
+        time { font-size: 1.125rem; margin-right: .2rem; }
       }
     }
 
@@ -1552,4 +1610,62 @@ body.top {
   }
 }
 
-.interview__all { display: block; margin: 2rem 7% 0; padding: 1rem; color: #2c3454; text-align: center; font-size: .875rem; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
+body.top .interview__all {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba($white, .3);
+  border-radius: 1.4rem;
+  isolation: isolate;
+  background: $Navy;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url('../image/interview/interview_kv.webp') calc(50% + 6rem) 25% / cover no-repeat;
+    -webkit-mask-image: linear-gradient(90deg, transparent 7rem, #000 11rem);
+    mask-image: linear-gradient(90deg, transparent 7rem, #000 11rem);
+    pointer-events: none;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba(196,44,53,.85), rgba(44,52,84,.94));
+    pointer-events: none;
+  }
+  box-shadow: 0 .5rem 1.25rem rgba($Navy, .18);
+  color: $white;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.6;
+
+  .interview__all-copy { display: flex; flex-direction: column; gap: .5rem; }
+  .interview__all-eyebrow { font-family: $font-title; font-size: .625rem; letter-spacing: .12em; opacity: .85; }
+  .interview__all-arrow {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba($white, .6);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  &:focus-visible { outline: 3px solid $Thema-color; outline-offset: 4px; }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .interview__all-arrow { background: $white; color: $Navy; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .interview__all-arrow { transition: none; }
+  }
+}
