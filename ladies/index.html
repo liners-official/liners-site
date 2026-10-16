@@ -55,13 +55,13 @@
   </script>
   <link rel="stylesheet" href="../assets/css/image-protection.css">
   <script src="../assets/js/image-protection.js" defer></script>
-  <script src="../assets/js/contact-tracking.js" defer></script>
+  <script src="../assets/js/analytics.js" defer></script>
 </head>
 <body class="softball-page">
   <div class="softball-page__opening" aria-hidden="true"></div>
-  <a class="softball-page__skip" href="#main">本文へスキップ</a>
+  <a data-analytics-id="page-main" class="softball-page__skip" href="#main">本文へスキップ</a>
   <header class="softball-page__header">
-    <a class="softball-page__brand" href="../"><img src="../assets/image/liners_logo.png" alt="LINERS（ライナーズ）ホーム" width="119" height="80"></a>
+    <a data-analytics-id="softball-page__header-a" class="softball-page__brand" href="../"><img src="../assets/image/liners_logo.png" alt="LINERS（ライナーズ）ホーム" width="119" height="80"></a>
   </header>
   <main id="main">
     <div class="softball-page__hero" data-parallax>
@@ -71,7 +71,7 @@
         <h1>レディース<br>ソフトボールとは</h1>
       </div>
       <nav class="softball-page__breadcrumb" aria-label="パンくずリスト">
-        <ol><li><a href="../">TOP</a></li><li aria-current="page">レディースソフトボールとは</li></ol>
+        <ol><li><a data-analytics-id="softball-page__breadcrumb-a" href="../">TOP</a></li><li aria-current="page">レディースソフトボールとは</li></ol>
       </nav>
     </div>
     <section class="softball-page__definition" aria-labelledby="definition-title" data-parallax>
@@ -85,7 +85,7 @@
         <p class="softball-page__lead">レディースソフトボールとは、日本ソフトボール協会が定める生涯スポーツとしての区分の一つで、<strong>15歳以上の女性を対象としたゴムボールを使用するソフトボールカテゴリー</strong>です。</p>
         <section class="softball-page__overview" aria-labelledby="ladies-overview-title">
           <h3 id="ladies-overview-title">レディースカテゴリーの概要</h3>
-          <p class="softball-page__source">このカテゴリーは、<a href="https://www.softball.or.jp/life/ladys/tournament2026/" target="_blank" rel="noopener noreferrer">日本ソフトボール協会（カテゴリーの説明・別タブで開きます）</a>が定める生涯スポーツの区分です。</p>
+          <p class="softball-page__source">このカテゴリーは、<a data-analytics-id="softball-page__overview-www-softball-or-jp-life-ladys-tournament2026" href="https://www.softball.or.jp/life/ladys/tournament2026/" target="_blank" rel="noopener noreferrer">日本ソフトボール協会（カテゴリーの説明・別タブで開きます）</a>が定める生涯スポーツの区分です。</p>
           <dl>
             <div>
               <dt>対象年齢・条件</dt>
@@ -107,12 +107,12 @@
         <p>経験やブランクを問わず、見学・体験を歓迎しています。参加をご希望の方は、InstagramのDMからお気軽にお問い合わせください。</p>
       </div>
       <p>\ チームメンバー募集中！ /</p>
-      <a data-contact-position="detail" class="softball-page__button" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="お問い合わせはこちら！ Instagram・別タブで開きます">お問い合わせはこちら！</a>
+      <a data-analytics-id="softball-page__contact-detail" data-contact-position="detail" class="softball-page__button" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="お問い合わせはこちら！ Instagram・別タブで開きます">お問い合わせはこちら！</a>
     </section>
     <nav class="softball-page__related" aria-label="関連ページ">
       <ul>
-        <li><a href="../">ホームへ戻る</a></li>
-        <li><a href="../elder/">エルダーソフトボールとは</a></li>
+        <li><a data-analytics-id="softball-page__related-a" href="../">ホームへ戻る</a></li>
+        <li><a data-analytics-id="softball-page__related-elder" href="../elder/">エルダーソフトボールとは</a></li>
       </ul>
     </nav>
   </main>

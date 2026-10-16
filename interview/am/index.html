@@ -62,13 +62,13 @@
   </script>
   <link rel="stylesheet" href="../../assets/css/image-protection.css">
   <script src="../../assets/js/image-protection.js" defer></script>
-  <script src="../../assets/js/contact-tracking.js" defer></script>
+  <script src="../../assets/js/analytics.js" defer></script>
 </head>
 <body class="softball-page interview-detail">
   <div class="softball-page__opening" aria-hidden="true"></div>
-  <a class="softball-page__skip" href="#main">本文へスキップ</a>
+  <a data-analytics-id="page-main" class="softball-page__skip" href="#main">本文へスキップ</a>
   <header class="softball-page__header">
-    <a class="softball-page__brand" href="../../"><img src="../../assets/image/liners_logo.png" alt="LINERS（ライナーズ）ホーム" width="119" height="80"></a>
+    <a data-analytics-id="softball-page__header-a" class="softball-page__brand" href="../../"><img src="../../assets/image/liners_logo.png" alt="LINERS（ライナーズ）ホーム" width="119" height="80"></a>
   </header>
   <main id="main">
     <div class="softball-page__hero" data-parallax>
@@ -78,7 +78,7 @@
         <h1>A.M さん<br>メンバーインタビュー</h1>
       </div>
       <nav class="softball-page__breadcrumb" aria-label="パンくずリスト">
-        <ol><li><a href="../../">TOP</a></li><li><a href="../">メンバーインタビュー</a></li><li aria-current="page">A.M さんのインタビュー</li></ol>
+        <ol><li><a data-analytics-id="softball-page__breadcrumb-a" href="../../">TOP</a></li><li><a data-analytics-id="softball-page__breadcrumb-a-2" href="../">メンバーインタビュー</a></li><li aria-current="page">A.M さんのインタビュー</li></ol>
       </nav>
     </div>
     <section class="softball-page__definition" aria-labelledby="definition-title" data-parallax>
@@ -128,12 +128,12 @@
         <p>経験やブランクを問わず、見学・体験を歓迎しています。参加をご希望の方は、InstagramのDMからお気軽にお問い合わせください。</p>
       </div>
       <p>\ チームメンバー募集中！ /</p>
-      <a data-contact-position="detail" class="softball-page__button" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="お問い合わせはこちら！ Instagram・別タブで開きます">お問い合わせはこちら！</a>
+      <a data-analytics-id="softball-page__contact-detail" data-contact-position="detail" class="softball-page__button" href="https://www.instagram.com/liners_oga?igsh=MXF0bDI3enBnbTRqbA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="お問い合わせはこちら！ Instagram・別タブで開きます">お問い合わせはこちら！</a>
     </section>
     <nav class="softball-page__related" aria-label="関連ページ">
       <ul>
-        <li><a href="../">インタビュー一覧へ戻る</a></li>
-        <li><a href="../miu/">みうさんのインタビュー ›</a></li>
+        <li><a data-analytics-id="softball-page__related-a" href="../">インタビュー一覧へ戻る</a></li>
+        <li><a data-analytics-id="softball-page__related-miu" href="../miu/">みうさんのインタビュー ›</a></li>
       </ul>
     </nav>
   </main>
