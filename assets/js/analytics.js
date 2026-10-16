@@ -1,5 +1,17 @@
 (() => {
-  // Page views are sent by the existing gtag('config', ...) on each page.
+  if (window.location.hostname !== 'liners.site') return;
+
+  const measurementId = 'G-4Y4767RTFT';
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', measurementId);
+
+  const googleTag = document.createElement('script');
+  googleTag.async = true;
+  googleTag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(googleTag);
+
   const text = (value) => (value || '').replace(/\s+/g, ' ').trim().slice(0, 100);
 
   const trackClick = (event) => {
@@ -30,7 +42,6 @@
 
     if (control.matches('a[href]')) {
       const url = new URL(control.href, window.location.href);
-      // Exclude query strings, credentials and mail/phone destinations.
       if (!['http:', 'https:'].includes(url.protocol)) return;
       parameters.link_url = `${url.origin}${url.pathname}${url.hash}`;
       parameters.link_domain = url.hostname;
@@ -46,11 +57,9 @@
       parameters.interaction_state = control.getAttribute('aria-expanded') === 'true' ? 'open' : 'closed';
     }
 
-    // Contact clicks use one event only, preserving the historical event name.
     window.gtag('event', isContact ? 'contact_click' : isFaq ? 'faq_toggle' : 'site_click', parameters);
   };
 
-  // Delegation also covers slider buttons created after page load.
   document.addEventListener('click', trackClick);
   document.addEventListener('auxclick', trackClick);
 })();
